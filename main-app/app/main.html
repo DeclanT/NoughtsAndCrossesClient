@@ -6,7 +6,7 @@
 
 
 <title>Noughts and Crosses Game Client</title>
-    <link rel="stylesheet" href="/main-app/app/less/stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="CSS/stylesheet.css" type="text/css">
 
 </head>
 
@@ -18,17 +18,17 @@
     <tr>
 
         <td>
-            <button id="0">
+            <button id="0" onclick="test(id)">
             </button>
         </td>
 
         <td id="grid1">
-            <button id="1">
+            <button id="1" onclick="test(id)">
             </button>
         </td>
 
         <td id="grid2">
-            <button id="2">
+            <button id="2" onclick="test(id)">
             </button>
         </td>
 
@@ -37,17 +37,17 @@
     <tr>
 
         <td id="grid3">
-            <button id="3">
+            <button id="3" onclick="test(id)">
             </button>
         </td>
 
         <td id="grid4">
-            <button id="4">
+            <button id="4" onclick="test(id)">
             </button>
         </td>
 
         <td id="grid5">
-            <button id="5">
+            <button id="5" onclick="test(id)">
             </button>
         </td>
 
@@ -56,17 +56,17 @@
     <tr>
 
         <td id="grid6">
-            <button id="6">
+            <button id="6" onclick="test(id)">
             </button>
         </td>
 
         <td id="grid7">
-            <button id="7">
+            <button id="7" onclick="test(id)">
             </button>
         </td>
 
         <td id="grid8">
-            <button id="8">
+            <button id="8" onclick="test(id)">
             </button>
         </td>
 
@@ -75,7 +75,18 @@
     </tbody>
 </table>
 
+<script>
+    var userchoice;
 
+    var test = function(id){
+        userchoice=id;
+        var element =document.getElementById(userchoice);
+        element.classList.add("hidebutton");
+
+
+    }
+
+</script>
 </body>
 
 </html>

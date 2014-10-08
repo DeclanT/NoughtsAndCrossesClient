@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="443fd726-cf5c-4838-bd9f-f5dd163dc53a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main-app/app/less/stylesheet.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main-app/app/html/main.html" afterPath="$PROJECT_DIR$/main-app/app/html/main.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/main-app/app/html/main.html" afterPath="$PROJECT_DIR$/main-app/app/main.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/main-app/app/less/stylesheet.css" afterPath="$PROJECT_DIR$/main-app/app/CSS/stylesheet.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NoughtsAndCrossesClient.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,16 +28,16 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="main.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main-app/app/html/main.html">
+        <entry file="file://$PROJECT_DIR$/main-app/app/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="23" selection-start="420" selection-end="420" vertical-scroll-proportion="0.4315476" vertical-offset="0" max-vertical-offset="1290">
+            <state line="9" column="0" selection-start="151" selection-end="151" vertical-scroll-proportion="0.13392857" vertical-offset="0" max-vertical-offset="1455">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="stylesheet.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main-app/app/less/stylesheet.css">
+        <entry file="file://$PROJECT_DIR$/main-app/app/CSS/stylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
             <state line="4" column="9" selection-start="0" selection-end="263" vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="390">
               <folding />
@@ -65,6 +64,7 @@
         <option value="$PROJECT_DIR$/main-app/app/html/stylesheet.css" />
         <option value="$PROJECT_DIR$/main-app/app/less/stylesheet.css" />
         <option value="$PROJECT_DIR$/main-app/app/html/main.html" />
+        <option value="$PROJECT_DIR$/main-app/app/main.html" />
       </list>
     </option>
   </component>
@@ -135,72 +135,6 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NoughtsAndCrossesClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NoughtsAndCrossesClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="less" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NoughtsAndCrossesClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NoughtsAndCrossesClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NoughtsAndCrossesClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NoughtsAndCrossesClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -217,9 +151,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/main-app/app" />
+      <recent name="$PROJECT_DIR$/main-app/app/CSS" />
+      <recent name="$PROJECT_DIR$/main-app/app/html" />
       <recent name="$PROJECT_DIR$/main-app/app/less" />
       <recent name="$PROJECT_DIR$/main-app" />
-      <recent name="$PROJECT_DIR$/main-app/app/html" />
     </key>
   </component>
   <component name="RunManager">
@@ -369,16 +305,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main-app/app/less/stylesheet.css">
+    <entry file="file://$PROJECT_DIR$/main-app/app/CSS/stylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="9" selection-start="0" selection-end="263" vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="390">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main-app/app/html/main.html">
+    <entry file="file://$PROJECT_DIR$/main-app/app/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="23" selection-start="420" selection-end="420" vertical-scroll-proportion="0.4315476" vertical-offset="0" max-vertical-offset="1290">
+        <state line="9" column="0" selection-start="151" selection-end="151" vertical-scroll-proportion="0.13392857" vertical-offset="0" max-vertical-offset="1455">
           <folding />
         </state>
       </provider>
