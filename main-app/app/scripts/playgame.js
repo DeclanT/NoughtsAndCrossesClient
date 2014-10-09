@@ -40,6 +40,7 @@ else {
 var newGame= function(){
 
     if (confirm("are you sure you want to start a new game?")){
+
     for (var i = 0; i < 9; i++) {
     var button=document.getElementById(i);
     button.classList.remove("hidebutton");
@@ -48,6 +49,18 @@ var newGame= function(){
     var img2=document.getElementById("cross"+i);
     img2.classList.remove("showimg");
     }
+        submit()
 }
 
+};
+
+var submit = function() {
+
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/newgame",true);
+
+    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    xmlhttp.send("player1=random&player2=random");
 };

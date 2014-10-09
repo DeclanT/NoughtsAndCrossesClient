@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="443fd726-cf5c-4838-bd9f-f5dd163dc53a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main-app/app/scripts/playgame.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main-app/app/main.html" afterPath="$PROJECT_DIR$/main-app/app/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main-app/app/CSS/stylesheet.css" afterPath="$PROJECT_DIR$/main-app/app/CSS/stylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main-app/app/scripts/playgame.js" afterPath="$PROJECT_DIR$/main-app/app/scripts/playgame.js" />
     </list>
     <ignored path="NoughtsAndCrossesClient.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +29,7 @@
       <file leaf-file-name="main.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main-app/app/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="995" selection-end="995" vertical-scroll-proportion="0.625" vertical-offset="0" max-vertical-offset="1680">
+            <state line="92" column="0" selection-start="2458" selection-end="2458" vertical-scroll-proportion="0.73240834" vertical-offset="641" max-vertical-offset="1650">
               <folding />
             </state>
           </provider>
@@ -40,7 +38,7 @@
       <file leaf-file-name="playgame.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main-app/app/scripts/playgame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="18" selection-start="416" selection-end="416" vertical-scroll-proportion="-11.4" vertical-offset="0" max-vertical-offset="855">
+            <state line="35" column="2" selection-start="640" selection-end="640" vertical-scroll-proportion="-19.8" vertical-offset="0" max-vertical-offset="1050">
               <folding>
                 <element signature="e#0#50#0" expanded="false" />
               </folding>
@@ -51,7 +49,7 @@
       <file leaf-file-name="stylesheet.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main-app/app/CSS/stylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="28" selection-start="303" selection-end="303" vertical-scroll-proportion="-14.4" vertical-offset="0" max-vertical-offset="870">
+            <state line="13" column="23" selection-start="183" selection-end="183" vertical-scroll-proportion="-7.8" vertical-offset="0" max-vertical-offset="870">
               <folding />
             </state>
           </provider>
@@ -77,16 +75,16 @@
         <option value="$PROJECT_DIR$/main-app/app/less/stylesheet.css" />
         <option value="$PROJECT_DIR$/main-app/app/html/main.html" />
         <option value="$PROJECT_DIR$/main-app/app/CSS/stylesheet.css" />
-        <option value="$PROJECT_DIR$/main-app/app/main.html" />
         <option value="$PROJECT_DIR$/main-app/app/scripts/playgame.js" />
+        <option value="$PROJECT_DIR$/main-app/app/main.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1073" />
+    <option name="x" value="-1153" />
     <option name="y" value="-1178" />
     <option name="width" value="1920" />
-    <option name="height" value="1177" />
+    <option name="height" value="1178" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -256,7 +254,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1073" y="-1178" width="1920" height="1177" extended-state="0" />
+    <frame x="-1153" y="-1178" width="1920" height="1178" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="-973" y="-1078" width="1720" height="977" />
@@ -356,14 +354,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main-app/app/CSS/stylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="28" selection-start="303" selection-end="303" vertical-scroll-proportion="-14.4" vertical-offset="0" max-vertical-offset="870">
+        <state line="13" column="23" selection-start="183" selection-end="183" vertical-scroll-proportion="-7.8" vertical-offset="0" max-vertical-offset="870">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main-app/app/scripts/playgame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="18" selection-start="416" selection-end="416" vertical-scroll-proportion="-11.4" vertical-offset="0" max-vertical-offset="855">
+        <state line="35" column="2" selection-start="640" selection-end="640" vertical-scroll-proportion="-19.8" vertical-offset="0" max-vertical-offset="1050">
           <folding>
             <element signature="e#0#50#0" expanded="false" />
           </folding>
@@ -372,7 +370,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main-app/app/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="995" selection-end="995" vertical-scroll-proportion="0.625" vertical-offset="0" max-vertical-offset="1680">
+        <state line="92" column="0" selection-start="2458" selection-end="2458" vertical-scroll-proportion="0.73240834" vertical-offset="641" max-vertical-offset="1650">
           <folding />
         </state>
       </provider>
