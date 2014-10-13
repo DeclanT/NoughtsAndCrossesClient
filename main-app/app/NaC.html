@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>Noughts and Crosses</title>
-    <link rel="stylesheet" type="text/css" href="CSS/NaC-CSS.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Style1.css" title="default">
+    <link rel="alternate stylesheet" type="text/css" href="CSS/Style2.css" title="alternate">
 </head>
 
 <body>
@@ -13,27 +14,8 @@
 
         <h1>Noughts & Crosses</h1>
 
-        <nav>
-            <ul>
-                <li id=Links>
-                    <a href="#Home">Home</a>
-                </li>
-                <li>
-                    <a href="#Rules">Rules</a>
-                </li>
-                <li>
-                    <a href="#About">About</a>
-                </li>
-            </ul>
-        </nav>
-
-        <div>
-            <a id="Home"></a>
-            <a id="Rules"></a>
-            <a id="About"></a>
-        </div>
-
     </header>
+
 
     <main>
 
@@ -43,19 +25,53 @@
     <aside>
 
         <h3>How to Play:</h3>
-        <p>Players soon discover that best play from both parties leads to a draw (often referred to as cat or cat's game). Hence, Tic-tac-toe is most often played by young children The simplicity of Tic-tac-toe makes it ideal as a pedagogical tool for teaching the concepts of good sportsmanship and the branch of artificial intelligence that deals with the searching of game trees. It is straightforward to write a computer program to play Tic-tac-toe perfectly, to enumerate the 765 essentially different positions (the state space complexity), or the 26,830 possible games</p>
-
+        <p>To begin the game simply select the type of player you want to play against here.</p>
+        <img src="Arrow.png" Alt="Arrow Left" id="Arrow">
+        <p>Once you have selected your opponent the game can begin. Use your wit to out play your friends or test your skills against the TicTacToeBot</p>
+        <img src="" Alt="" Id="Robot">
     </aside>
 
 
     <footer>
 
-        <h3>Private Policy</h3>
-        <p>Dint gan stealin me game like or il come round your house later at night and rek ya so hard you wint na what hit ya like.</p>
+        <h4>Copyright 2014</h4>
+        <p id="Foot">Created by the GameDev team</p>
+
+        <button onclick=setActiveStyleSheet("default");>Change style to default</button>
+        <button onclick=setActiveStyleSheet("alternate");>Change style to alternate</button>
 
     </footer>
 
+<script>
+    function setActiveStyleSheet(title) {
+    var i, a, main;
+    for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
+    if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
+    a.disabled = true;
+    if(a.getAttribute("title") == title) a.disabled = false;
+    }
+    }
+    }
 
+    function getActiveStyleSheet() {
+    var i, a;
+    for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
+    if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title") && !a.disabled) return a.getAttribute("title");
+    }
+    return null;
+    }
+
+    function getPreferredStyleSheet() {
+    var i, a;
+    for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
+    if(a.getAttribute("rel").indexOf("style") != -1
+    && a.getAttribute("rel").indexOf("alt") == -1
+    && a.getAttribute("title")
+    ) return a.getAttribute("title");
+    }
+    return null;
+    }
+</script>
 
 </div>
 

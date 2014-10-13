@@ -14,6 +14,16 @@ h3 {
     color: #700b0b;
 }
 
+h4 {
+    margin:0;
+    color: #700b0b;
+}
+
+#Foot {
+    margin:0;
+    color: #700b0b;
+}
+
 p {
     margin-left: 8px;
 }
@@ -24,25 +34,6 @@ header {
     font-size: 21px;
     font: bold;
     margin-bottom: 8px;
-}
-
-header a {
-    text-decoration: none;
-    color: #700b0b;
-}
-
-header li {
-    list-style: none;
-    display: inline-block;
-    width: 60px;
-    padding-left: 14px;
-    border-left-style: solid;
-    border-left-width: 2px;
-    border-left-color: #FFF;
-}
-
-header ul, nav {
-    display: inline-block;
 }
 
 aside {
@@ -87,4 +78,9 @@ li#Links {
 
 footer {
     background-color: #7dacff;
+}
+
+#Arrow {
+    width: 130px;
+    Height: 50px;
 }
