@@ -6,22 +6,22 @@ h1 {
     font-size: 50px;
     display: inline-block;
     margin-left: 8px;
-    color: #86ff35;
+    color: #ff3900;
 }
 
 h3 {
     margin-left: 8px;
-    color: #86ff35;
+    color: #ff3900;
 }
 
 h4 {
     margin:0;
-    color: #86ff35;
+    color: #ff3900;
 }
 
 #Foot {
     margin:0;
-    color: #86ff35;
+    color: #ff3900;
 }
 
 p {
@@ -29,8 +29,8 @@ p {
 }
 
 header {
-    background-color: #ee1515;
-    color: #86ff35;
+    background-color: #011a00;
+    color: #ff3900;
     font-size: 21px;
     font: bold;
     margin-bottom: 8px;
@@ -52,8 +52,8 @@ aside h3 {
     font-size: 18px;
     margin: 0;
     padding: 4px;
-    background-color: #ee1515;
-    color: #86ff35;
+    background-color: #011a00;
+    color: #ff3900;
     font: bold;
 }
 
@@ -77,7 +77,7 @@ li#Links {
 }
 
 footer {
-    background-color: #ee1515;
+    background-color: #011a00;
 }
 
 #Arrow {
