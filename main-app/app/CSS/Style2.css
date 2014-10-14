@@ -2,26 +2,30 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    background-color: #700b0b;
+}
+
 h1 {
     font-size: 50px;
     display: inline-block;
     margin-left: 8px;
-    color: #ff3900;
+    color: #eaeeff;
 }
 
 h3 {
     margin-left: 8px;
-    color: #ff3900;
+    color: #eaeeff;
 }
 
 h4 {
     margin:0;
-    color: #ff3900;
+    color: #eaeeff;
 }
 
 #Foot {
     margin:0;
-    color: #ff3900;
+    color: #eaeeff;
 }
 
 p {
@@ -29,8 +33,8 @@ p {
 }
 
 header {
-    background-color: #011a00;
-    color: #ff3900;
+    background-color: #ff76e4;
+    color: #eaeeff;
     font-size: 21px;
     font: bold;
     margin-bottom: 8px;
@@ -45,20 +49,20 @@ aside {
 
 aside table {
     width: 200px;
-    color: #AAAAAA;
+    color: #ff76e4;
 }
 
 aside h3 {
     font-size: 18px;
     margin: 0;
     padding: 4px;
-    background-color: #011a00;
-    color: #ff3900;
+    background-color: #ff76e4;
+    color: #eaeeff;
     font: bold;
 }
 
 main {
-    background-color: #f4f4f4;
+    background-color: #ff76e4;
     width: 780px;
     display: inline-block;
 }
@@ -69,7 +73,7 @@ main {
     margin-bottom: 0;
     Margin-left: auto;
     Margin-right: auto;
-    background-color: #ffffff;
+    background-color: #eaeeff;
 }
 
 li#Links {
@@ -77,10 +81,5 @@ li#Links {
 }
 
 footer {
-    background-color: #011a00;
-}
-
-#Arrow {
-    width: 130px;
-    Height: 50px;
+    background-color: #ff76e4;
 }
