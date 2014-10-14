@@ -60,7 +60,32 @@ var submit = function() {
 
     xmlhttp.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/newgame",true);
 
+    xmlhttp.onload = function(){
+    var response = xmlhttp.response;
+
+        if(xmlhttp.readyState !==4){
+
+
+        }
+
+        if(xmlhttp.status === 200){
+            console.log(response.message);
+        }
+
+        else {
+        if(xmlhttp.status === 500){
+            console.log(response.message);
+              }
+        }
+    };
+
+
+
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.responseType="json";
 
     xmlhttp.send("player1=random&player2=random");
+
+
+
 };

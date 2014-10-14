@@ -30,7 +30,7 @@ button {
     padding:0;
 }
 
-#resetbutton {
+#ResetButton {
     height:80px;
     width:120px;
     background:#700b0b;
@@ -51,3 +51,4 @@ img{
 .showimg {
     display:table-cell;
 }
+
