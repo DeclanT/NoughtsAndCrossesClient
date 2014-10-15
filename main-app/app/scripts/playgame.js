@@ -39,7 +39,7 @@ else {
 
 var newGame= function(){
 
-    if (confirm("are you sure you want to start a new game?")){
+    if (confirm("Are you sure you want to start a new game?")){
 
     for (var i = 0; i < 9; i++) {
     var button=document.getElementById(i);
@@ -71,9 +71,8 @@ var submit = function() {
             alert(response.message);
         }
 
-        if(xmlhttp.status === 422){
+        if(xmlhttp.status === 500){
             alert(response.message);
-
         }
     };
 
