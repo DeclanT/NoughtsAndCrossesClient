@@ -56,31 +56,32 @@ var newGame= function(){
 
 var submit = function() {
 
-    var xmlhttp = new XMLHttpRequest();
-    var response = xmlhttp.response;
+    var xmlHttpRequest = new XMLHttpRequest();
+    xmlHttpRequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/newgame", true);
 
-    xmlhttp.onreadystatechange = function(){
+    xmlHttpRequest.onreadystatechange= function () {
+        var response = xmlHttpRequest.responseText ;
 
+        if (xmlHttpRequest.readyState === 4) {
 
+            if (xmlHttpRequest.status === 200) {
+                alert(response);
+            }
 
-        if(xmlhttp.readyState !==4){
-            return;
-        }
-
-        if(xmlhttp.status === 200){
-            alert(response.message);
-        }
-
-        if(xmlhttp.status === 500){
-            alert(response.message);
+            else {
+                alert(response);
+            }
         }
     };
 
-    xmlhttp.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/newgame",true);
-    xmlhttp.responseType="json";
-    xmlhttp.setRequestHeader("content-type","application/x-www-form-urlencoded");
+    xmlHttpRequest.withCredentials = true;
 
-    xmlhttp.send("player1=random&player2=random");
+    xmlHttpRequest.setRequestHeader("content-type","application/json;charset=UTF-8");
 
-    alert(response.message)
+
+    var playertypes = {player1:"random", player2:"random"};
+
+    xmlHttpRequest.send(JSON.stringify(playertypes));
+
+
 };
