@@ -118,8 +118,7 @@ var submit = function(player1Type,player2Type) {
             else {
                 console.log(response);
             }
-        }
-    };
+        };
 
     xmlHttpRequest.withCredentials = true;
 
@@ -129,6 +128,6 @@ var submit = function(player1Type,player2Type) {
     var playerTypes = {player1:player1Type, player2:player2Type};
 
     xmlHttpRequest.send(JSON.stringify(playerTypes));
-
-
 };
+
+
