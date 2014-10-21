@@ -5,7 +5,7 @@
 var userchoice;
 var playerturn;
 
-playerturn="player1";
+playerturn="1";
 
 var shownought = function(){
     var img =document.getElementById("nought"+userchoice);
@@ -25,11 +25,13 @@ var makeChoice = function(id){
 
     if (playerturn === "1"){
     shownought();
+        makemove(playerturn,id);
     playerturn ="2";
     }
 
 else {
     showcross();
+        makemove(playerturn,id);
     playerturn=("1")
     }
 
@@ -50,6 +52,7 @@ var newGame= function(){
     img2.classList.remove("showimg");
     }
         submit()
+        click()
 }
 
 };
@@ -79,9 +82,56 @@ var submit = function() {
     xmlHttpRequest.setRequestHeader("content-type","application/json;charset=UTF-8");
 
 
-    var playertypes = {player1:"random", player2:"random"};
+    var playertypes = {player1:"human", player2:"human"};
+
+
 
     xmlHttpRequest.send(JSON.stringify(playertypes));
 
 
+
 };
+
+var makemove = function(playerturn,id) {
+
+    var xhttprequest = new XMLHttpRequest();
+    xhttprequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/makemove", true);
+
+
+    xhttprequest.withCredentials = true;
+    xhttprequest.setRequestHeader("content-type","application/json;charset=UTF-8");
+
+    xhttprequest.onreadystatechange= function () {
+        var response = xhttprequest.responseText ;
+
+        if (xhttprequest.readyState === 4) {
+
+            if (xhttprequest.status === 200) {
+                alert(response);
+            }
+
+            else {
+                alert(response);
+            }
+        }
+    };
+
+    var makeMove = {"playerNumber":playerturn, "chosenSquare":id};
+
+xhttprequest.send(JSON.stringify(makeMove));
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
