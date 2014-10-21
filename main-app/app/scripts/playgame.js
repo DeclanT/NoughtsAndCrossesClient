@@ -1,5 +1,6 @@
 /**
  * Created by declan.taylor on 09/10/2014.
+ * updated by David Robson 21/10/2014.
  */
 
 var userchoice;
@@ -62,20 +63,7 @@ var submit = function() {
     var xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/newgame", true);
 
-    xmlHttpRequest.onreadystatechange= function () {
-        var response = xmlHttpRequest.responseText ;
 
-        if (xmlHttpRequest.readyState === 4) {
-
-            if (xmlHttpRequest.status === 200) {
-                alert(response);
-            }
-
-            else {
-                alert(response);
-            }
-        }
-    };
 
     xmlHttpRequest.withCredentials = true;
 
@@ -107,14 +95,30 @@ var makemove = function(playerturn,id) {
         if (xhttprequest.readyState === 4) {
 
             if (xhttprequest.status === 200) {
-                alert(response);
-            }
+                console.log(response);
 
-            else {
-                alert(response);
+                if (response.substring(12,15) === "Win"){
+
+                    if (response.substring(51,52)==="1"){
+                        alert("Player One has won!")
+                    }
+
+                    else if (response.substring(51,52) === "2"){
+                        alert("Player Two has won!")
+                    }
+                }
+
+                else if (response.substring(12,16) === "draw"){
+                    alert("Game was a draw")
+                }
             }
         }
+
+        else {
+            console.log(response);
+        }
     };
+
 
     var makeMove = {"playerNumber":playerturn, "chosenSquare":id};
 
