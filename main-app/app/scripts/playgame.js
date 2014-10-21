@@ -96,11 +96,27 @@ var submit = function(player1Type,player2Type) {
         if (xmlHttpRequest.readyState === 4) {
 
             if (xmlHttpRequest.status === 200) {
-                alert(response);
+                console.log(response);
+
+                if (response.substring(12,15) === "Win"){
+
+                    if (response.substring(51,52)==="1"){
+                        alert("Player One has won!")
+                    }
+
+                    else if (response.substring(51,52) === "2"){
+                        alert("Player Two has won!")
+                    }
+                }
+
+                else if (response.substring(12,16) === "Draw"){
+                    alert("Game was a draw")
+                }
+            }
             }
 
             else {
-                alert(response);
+                console.log(response);
             }
         }
     };
