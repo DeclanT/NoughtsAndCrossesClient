@@ -49,12 +49,43 @@ var newGame= function(){
     var img2=document.getElementById("cross"+i);
     img2.classList.remove("showimg");
     }
-        submit()
+
+       var player1Type;
+
+        if (document.getElementById("player1Human").checked){
+            player1Type = document.getElementById("player1Human").value;
+        }
+
+        else if (document.getElementById("player1Random").checked){
+            player1Type= document.getElementById("player1Random").value
+        }
+
+        else if (document.getElementById("player1PreTrained").checked){
+            player1Type= document.getElementById("player1PreTrained").value
+        }
+
+
+        var player2Type;
+
+        if (document.getElementById("player2Human").checked){
+            player2Type = document.getElementById("player2Human").value;
+        }
+
+        else if (document.getElementById("player2Random").checked){
+            player2Type= document.getElementById("player2Random").value
+        }
+
+        else if (document.getElementById("player2PreTrained").checked){
+            player2Type= document.getElementById("player2PreTrained").value
+        }
+
+
+        submit(player1Type,player2Type)
 }
 
 };
 
-var submit = function() {
+var submit = function(player1Type,player2Type) {
 
     var xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/newgame", true);
@@ -79,9 +110,9 @@ var submit = function() {
     xmlHttpRequest.setRequestHeader("content-type","application/json;charset=UTF-8");
 
 
-    var playertypes = {player1:"random", player2:"random"};
+    var playerTypes = {player1:player1Type, player2:player2Type};
 
-    xmlHttpRequest.send(JSON.stringify(playertypes));
+    xmlHttpRequest.send(JSON.stringify(playerTypes));
 
 
 };

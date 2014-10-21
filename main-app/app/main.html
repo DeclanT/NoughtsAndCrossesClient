@@ -95,9 +95,58 @@
 
 </table>
 
-    <button id="ResetButton" onclick="newGame()">
-        New Game
-    </button>
+
+<div id="player1TypeChoice">
+
+    <label>Player 1</label>
+
+    <ul>
+
+        <li>
+            <input type = "radio" name = "player1Type" id = "player1Human" value = "human">
+            <label for = "player1Human">Human</label>
+        </li>
+
+        <li>
+            <input type = "radio" name = "player1Type" id = "player1Random" value = "random" checked="checked">
+            <label for = "player1Random">Random</label>
+        </li>
+
+        <li>
+        <input type = "radio" name = "player1Type" id = "player1PreTrained" value = "pre-trained">
+        <label for = "player1PreTrained">Pre-trained</label>
+        </li>
+
+    </ul>
+</div>
+
+<div id="player2TypeChoice">
+
+    <label>Player 2</label>
+
+    <ul>
+
+        <li>
+            <input type="radio" name="player2Type" id="player2Human" value="human">
+            <label for="player2Human">Human</label>
+        </li>
+
+        <li>
+            <input type="radio" name="player2Type" id="player2Random" value="random" checked="checked">
+            <label for="player2Random">Random</label>
+        </li>
+
+        <li>
+            <input type="radio" name="player2Type" id="player2PreTrained" value="pre-trained">
+            <label for="player2PreTrained">Pre-Trained</label>
+        </li>
+
+    </ul>
+</div>
+
+<button id="ResetButton" onclick="newGame()">
+    New Game
+</button>
 
 <script>
 
