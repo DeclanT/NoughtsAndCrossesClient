@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Noughts and Crosses</title>
+    <link rel="stylesheet" type="text/css" href="CSS/Style1.css" title="default">
+    <link rel="alternate stylesheet" type="text/css" href="CSS/Style2.css" title="alternate">
+</head>
+
+<body>
+
+<div id="contentContainer">
+
+    <header>
+
+        <h1>Noughts & Crosses</h1>
+
+    </header>
+
+
+    <main>
+
+    </main>
+
+
+    <aside>
+
+        <h3>How to Play:</h3>
+
+        <p>
+            Many people are familiar with the rules of noughts and crosses,
+            the rules are very simple and straightforward and they are as follows:
+        </p>
+
+        <h3>Conditions of Victory</h3>
+
+        <p>
+            To win, all one player must have is three noughts or three crosses in a row
+            these can either be: in a vertical line, horizontal line or diagonally arranged.
+        </p>
+
+        <h3> Movement </h3>
+
+        <p>
+            Players may choose to place a nought or cross in any unoccupied location within the game board.
+            Each player must only take one turn at a time.
+        </p>
+
+    </aside>
+
+
+    <footer>
+
+        <h4>Copyright 2014</h4>
+        <p id="Foot">Created by the GameDev team</p>
+
+        <button onclick=setActiveStyleSheet("default");>Change style to default</button>
+        <button onclick=setActiveStyleSheet("alternate");>Change style to alternate</button>
+
+    </footer>
+
+<script>
+
+    function setActiveStyleSheet(title) {
+
+    for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
+
+    if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
+    a.disabled = true;
+
+    if(a.getAttribute("title") == title) a.disabled = false;
+        
+        }
+    }
+}
+
+</script>
+
+</div>
+
+</body>
+</html>
