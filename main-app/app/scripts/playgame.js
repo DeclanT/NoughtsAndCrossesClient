@@ -5,7 +5,7 @@
 var userchoice;
 var playerturn;
 
-playerturn="player1";
+playerturn="1";
 
 var shownought = function(){
     var img =document.getElementById("nought"+userchoice);
@@ -113,11 +113,12 @@ var submit = function(player1Type,player2Type) {
                     alert("Game was a draw")
                 }
             }
-            }
+
 
             else {
                 console.log(response);
             }
+        }
         };
 
     xmlHttpRequest.withCredentials = true;
