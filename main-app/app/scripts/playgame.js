@@ -52,8 +52,8 @@ var newGame= function(){
     var img2=document.getElementById("cross"+i);
     img2.classList.remove("showimg");
     }
-        submit()
-        click()
+        submit();
+
 }
 
 };
@@ -76,7 +76,7 @@ var submit = function() {
 
     xmlHttpRequest.send(JSON.stringify(playertypes));
 
-
+    playerturn ="1"
 
 };
 
