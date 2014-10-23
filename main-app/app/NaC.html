@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>Noughts and Crosses</title>
+
+    <script src="JavaScript.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="CSS/Style1.css" title="default">
-    <link rel="alternate stylesheet" type="text/css" href="CSS/Style2.css" title="alternate">
+    <link rel="alternate stylesheet" type="text/css" href="CSS/Style2.css" title="Style2">
+
 </head>
 
 <body>
@@ -53,27 +57,10 @@
         <h4>Copyright 2014</h4>
         <p id="Foot">Created by the GameDev team</p>
 
-        <button onclick=setActiveStyleSheet("default");>Change style to default</button>
-        <button onclick=setActiveStyleSheet("alternate");>Change style to alternate</button>
+        <button onclick=setActiveStyleSheet("default");>Default Blue</button>
+        <button onclick=setActiveStyleSheet("Style2");>Default Pink</button>
 
     </footer>
-
-<script>
-
-    function setActiveStyleSheet(title) {
-
-    for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
-
-    if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
-    a.disabled = true;
-
-    if(a.getAttribute("title") == title) a.disabled = false;
-        
-        }
-    }
-}
-
-</script>
 
 </div>
 
