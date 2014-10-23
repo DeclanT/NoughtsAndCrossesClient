@@ -11,12 +11,12 @@ playerturn="1";
 var shownought = function(){
     var img =document.getElementById("nought"+userchoice);
     img.classList.add("showimg");
-    };
+};
 
 var showcross = function(){
     var img =document.getElementById("cross"+userchoice);
     img.classList.add("showimg");
-    };
+};
 
 
 var makeChoice = function(id){
@@ -25,15 +25,13 @@ var makeChoice = function(id){
     button.classList.add("hidebutton");
 
     if (playerturn === "1"){
-    shownought();
-        makemove(playerturn,id);
-    playerturn ="2";
+        shownought();
+        playerturn ="2";
     }
 
-else {
-    showcross();
-        makemove(playerturn,id);
-    playerturn=("1")
+    else {
+        showcross();
+        playerturn=("1")
     }
 
 };
@@ -44,17 +42,16 @@ var newGame= function(){
 
     if (confirm("Are you sure you want to start a new game?")){
 
-    for (var i = 0; i < 9; i++) {
-    var button=document.getElementById(i);
-    button.classList.remove("hidebutton");
-    var img=document.getElementById("nought"+i);
-    img.classList.remove("showimg");
-    var img2=document.getElementById("cross"+i);
-    img2.classList.remove("showimg");
-    }
+        for (var i = 0; i < 9; i++) {
+            var button=document.getElementById(i);
+            button.classList.remove("hidebutton");
+            var img=document.getElementById("nought"+i);
+            img.classList.remove("showimg");
+            var img2=document.getElementById("cross"+i);
+            img2.classList.remove("showimg");
+        }
 
-
-       var player1Type;
+        var player1Type;
 
         if (document.getElementById("player1Human").checked){
             player1Type = document.getElementById("player1Human").value;
@@ -85,7 +82,7 @@ var newGame= function(){
 
 
         submit(player1Type,player2Type)
-}
+    }
 
 };
 
@@ -94,9 +91,11 @@ var submit = function(player1Type,player2Type) {
     var xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/newgame", true);
 
+    xmlHttpRequest.onreadystatechange= function () {
+        var response = xmlHttpRequest.responseText ;
 
+        if (xmlHttpRequest.readyState === 4) {
 
-<<<<<<< HEAD
             if (xmlHttpRequest.status === 200) {
                 console.log(response);
 
@@ -121,21 +120,16 @@ var submit = function(player1Type,player2Type) {
                 console.log(response);
             }
         }
-        };
-=======
+    };
+
     xmlHttpRequest.withCredentials = true;
 
     xmlHttpRequest.setRequestHeader("content-type","application/json;charset=UTF-8");
 
 
-    var playertypes = {player1:"human", player2:"human"};
+    var playerTypes = {player1:player1Type, player2:player2Type};
 
-
-
-    xmlHttpRequest.send(JSON.stringify(playertypes));
-
-    playerturn ="1"
-
+    xmlHttpRequest.send(JSON.stringify(playerTypes));
 };
 
 var makemove = function(playerturn,id) {
@@ -176,8 +170,6 @@ var makemove = function(playerturn,id) {
             console.log(response);
         }
     };
->>>>>>> GameState-Visualisation
-
 
     var makeMove = {"playerNumber":playerturn, "chosenSquare":id};
 
@@ -187,21 +179,5 @@ xhttprequest.send(JSON.stringify(makeMove));
 }
 
 
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-    var playerTypes = {player1:player1Type, player2:player2Type};
-
-    xmlHttpRequest.send(JSON.stringify(playerTypes));
-};
-=======
-
->>>>>>> GameState-Visualisation
 
 
