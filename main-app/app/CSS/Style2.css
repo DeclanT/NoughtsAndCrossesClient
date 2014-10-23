@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #700b0b;
+    background-color: #f7d8ff;
 }
 
 h1 {
@@ -14,7 +14,7 @@ h1 {
 }
 
 h3 {
-    margin-left: 8px;
+    margin-left: 4px;
     color: #eaeeff;
 }
 
@@ -29,7 +29,7 @@ h4 {
 }
 
 p {
-    margin-left: 8px;
+    margin-left: 4px;
 }
 
 header {
@@ -37,7 +37,7 @@ header {
     color: #eaeeff;
     font-size: 21px;
     font: bold;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 aside {
@@ -55,7 +55,7 @@ aside table {
 aside h3 {
     font-size: 18px;
     margin: 0;
-    padding: 4px;
+    padding: 5px;
     background-color: #ff76e4;
     color: #eaeeff;
     font: bold;
@@ -82,4 +82,9 @@ li#Links {
 
 footer {
     background-color: #ff76e4;
+}
+
+button {
+    width:90px;
+    height:35px;
 }

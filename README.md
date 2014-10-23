@@ -6,4 +6,3 @@ The beginning of the tombola apprentices
 
 
 Tutorial example, blah de blah blah  blah
-
