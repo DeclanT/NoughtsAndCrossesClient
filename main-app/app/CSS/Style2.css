@@ -18,18 +18,24 @@ h3 {
     color: #eaeeff;
 }
 
+aside p {
+    margin-bottom: 2px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
 h4 {
     margin:0;
     color: #eaeeff;
 }
 
-#Foot {
+#foot {
     margin:0;
     color: #eaeeff;
 }
 
 p {
-    margin-left: 4px;
+    margin-top: 4px;
 }
 
 header {
@@ -76,15 +82,17 @@ main {
     background-color: #eaeeff;
 }
 
-li#Links {
-    border-left-style: none;
-}
-
 footer {
     background-color: #ff76e4;
 }
 
 button {
     width:90px;
-    height:35px;
+    height:33px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+}
+
+#pink {
+    margin-left: -3px;
 }
