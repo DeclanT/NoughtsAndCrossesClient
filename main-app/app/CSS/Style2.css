@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #700b0b;
+    background-color: #f7d8ff;
 }
 
 h1 {
@@ -82,4 +82,9 @@ li#Links {
 
 footer {
     background-color: #ff76e4;
+}
+
+button {
+    width:90px;
+    height:35px;
 }
