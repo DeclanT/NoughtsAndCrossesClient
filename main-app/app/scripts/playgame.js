@@ -1,5 +1,6 @@
 /**
  * Created by declan.taylor on 09/10/2014.
+ * updated by David Robson 21/10/2014.
  */
 
 var userchoice;
@@ -25,11 +26,13 @@ var makeChoice = function(id){
 
     if (playerturn === "1"){
     shownought();
+        makemove(playerturn,id);
     playerturn ="2";
     }
 
 else {
     showcross();
+        makemove(playerturn,id);
     playerturn=("1")
     }
 
@@ -49,6 +52,7 @@ var newGame= function(){
     var img2=document.getElementById("cross"+i);
     img2.classList.remove("showimg");
     }
+
 
        var player1Type;
 
@@ -90,11 +94,9 @@ var submit = function(player1Type,player2Type) {
     var xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/newgame", true);
 
-    xmlHttpRequest.onreadystatechange= function () {
-        var response = xmlHttpRequest.responseText ;
 
-        if (xmlHttpRequest.readyState === 4) {
 
+<<<<<<< HEAD
             if (xmlHttpRequest.status === 200) {
                 console.log(response);
 
@@ -120,15 +122,86 @@ var submit = function(player1Type,player2Type) {
             }
         }
         };
-
+=======
     xmlHttpRequest.withCredentials = true;
 
     xmlHttpRequest.setRequestHeader("content-type","application/json;charset=UTF-8");
 
 
+    var playertypes = {player1:"human", player2:"human"};
+
+
+
+    xmlHttpRequest.send(JSON.stringify(playertypes));
+
+    playerturn ="1"
+
+};
+
+var makemove = function(playerturn,id) {
+
+    var xhttprequest = new XMLHttpRequest();
+    xhttprequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/makemove", true);
+
+
+    xhttprequest.withCredentials = true;
+    xhttprequest.setRequestHeader("content-type","application/json;charset=UTF-8");
+
+    xhttprequest.onreadystatechange= function () {
+        var response = xhttprequest.responseText ;
+
+        if (xhttprequest.readyState === 4) {
+
+            if (xhttprequest.status === 200) {
+                console.log(response);
+
+                if (response.substring(12,15) === "Win"){
+
+                    if (response.substring(51,52)==="1"){
+                        alert("Player One has won!")
+                    }
+
+                    else if (response.substring(51,52) === "2"){
+                        alert("Player Two has won!")
+                    }
+                }
+
+                else if (response.substring(12,16) === "draw"){
+                    alert("Game was a draw")
+                }
+            }
+        }
+
+        else {
+            console.log(response);
+        }
+    };
+>>>>>>> GameState-Visualisation
+
+
+    var makeMove = {"playerNumber":playerturn, "chosenSquare":id};
+
+xhttprequest.send(JSON.stringify(makeMove));
+
+
+}
+
+
+
+
+
+
+
+
+
+
+<<<<<<< HEAD
     var playerTypes = {player1:player1Type, player2:player2Type};
 
     xmlHttpRequest.send(JSON.stringify(playerTypes));
 };
+=======
+
+>>>>>>> GameState-Visualisation
 
 
