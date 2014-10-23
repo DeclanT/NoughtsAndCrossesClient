@@ -18,12 +18,18 @@ h3 {
     color: #eaeeff;
 }
 
+aside p {
+    margin-bottom: 2px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
 h4 {
     margin:0;
     color: #eaeeff;
 }
 
-#Foot {
+#foot {
     margin:0;
     color: #eaeeff;
 }
@@ -76,9 +82,6 @@ main {
     background-color: #eaeeff;
 }
 
-li#Links {
-    border-left-style: none;
-}
 
 footer {
     background-color: #3b5dff;
@@ -89,4 +92,8 @@ button {
     height:33px;
     margin-left: 2px;
     margin-bottom: 2px;
+}
+
+.buttonStyle {
+    margin-left: -3px;
 }
