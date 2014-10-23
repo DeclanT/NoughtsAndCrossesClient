@@ -3,36 +3,40 @@
  * updated by David Robson 21/10/2014.
  */
 
-var userchoice;
-var playerturn;
+var userChoice;
+var playerTurn;
 
-playerturn="1";
+playerTurn=1;
 
-var shownought = function(){
-    var img =document.getElementById("nought"+userchoice);
+var showNought = function(){
+    var img =document.getElementById("nought"+userChoice);
     img.classList.add("showimg");
 };
 
-var showcross = function(){
-    var img =document.getElementById("cross"+userchoice);
+var showCross = function(){
+    var img =document.getElementById("cross"+userChoice);
     img.classList.add("showimg");
 };
 
 
 var makeChoice = function(id){
-    userchoice=id;
-    var button =document.getElementById(userchoice);
+    userChoice=id;
+    var button =document.getElementById(userChoice);
     button.classList.add("hidebutton");
 
-    if (playerturn === "1"){
-        shownought();
-        playerturn ="2";
+    if (playerTurn === 1){
+        showNought();
+        makeMove(playerTurn, userChoice)
+        playerTurn =2;
     }
 
     else {
-        showcross();
-        playerturn=("1")
+        showCross();
+        makeMove(playerTurn, userChoice)
+        playerTurn=1;
     }
+
+
 
 };
 
@@ -82,6 +86,7 @@ var newGame= function(){
 
 
         submit(player1Type,player2Type)
+        playerTurn =1;
     }
 
 };
@@ -97,7 +102,6 @@ var submit = function(player1Type,player2Type) {
         if (xmlHttpRequest.readyState === 4) {
 
             if (xmlHttpRequest.status === 200) {
-                console.log(response);
 
                 if (response.substring(12,15) === "Win"){
 
@@ -115,10 +119,6 @@ var submit = function(player1Type,player2Type) {
                 }
             }
 
-
-            else {
-                console.log(response);
-            }
         }
     };
 
@@ -132,22 +132,22 @@ var submit = function(player1Type,player2Type) {
     xmlHttpRequest.send(JSON.stringify(playerTypes));
 };
 
-var makemove = function(playerturn,id) {
+var makeMove = function(playerTurn,id) {
 
-    var xhttprequest = new XMLHttpRequest();
-    xhttprequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/makemove", true);
+    var xmlHttpRequest = new XMLHttpRequest();
+    xmlHttpRequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/makemove", true);
 
 
-    xhttprequest.withCredentials = true;
-    xhttprequest.setRequestHeader("content-type","application/json;charset=UTF-8");
+    xmlHttpRequest.withCredentials = true;
+    xmlHttpRequest.setRequestHeader("content-type","application/json;charset=UTF-8");
 
-    xhttprequest.onreadystatechange= function () {
-        var response = xhttprequest.responseText ;
 
-        if (xhttprequest.readyState === 4) {
+    xmlHttpRequest.onreadystatechange= function () {
+        var response = xmlHttpRequest.responseText ;
 
-            if (xhttprequest.status === 200) {
-                console.log(response);
+        if (xmlHttpRequest.readyState === 4) {
+
+            if (xmlHttpRequest.status === 200) {
 
                 if (response.substring(12,15) === "Win"){
 
@@ -167,16 +167,16 @@ var makemove = function(playerturn,id) {
         }
 
         else {
-            console.log(response);
+
         }
     };
 
-    var makeMove = {"playerNumber":playerturn, "chosenSquare":id};
+    var makeMove = {"playerNumber":playerTurn, "chosenSquare":id};
 
-xhttprequest.send(JSON.stringify(makeMove));
+    xmlHttpRequest.send(JSON.stringify(makeMove));
 
 
-}
+};
 
 
 
