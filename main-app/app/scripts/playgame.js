@@ -137,10 +137,6 @@ var makeMove = function(playerTurn,id) {
     xmlHttpRequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/makemove", true);
 
 
-    xmlHttpRequest.withCredentials = true;
-    xmlHttpRequest.setRequestHeader("content-type","application/json;charset=UTF-8");
-
-
     xmlHttpRequest.onreadystatechange= function () {
         var response = xmlHttpRequest.responseText ;
 
@@ -168,6 +164,10 @@ var makeMove = function(playerTurn,id) {
         else {
 
         }
+
+        xmlHttpRequest.withCredentials = true;
+
+        xmlHttpRequest.setRequestHeader("content-type","application/json;charset=UTF-8");
 
 
     var makeMove = {"playerNumber":playerTurn, "chosenSquare":id};
