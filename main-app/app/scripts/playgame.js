@@ -155,7 +155,7 @@ var makeMove = function(playerTurn,id) {
                     }
                 }
 
-                else if (response.substring(12,16) === "draw"){
+                else if (response.substring(12,16) === "Draw"){
                     alert("Game was a draw")
                 }
             }
@@ -165,14 +165,16 @@ var makeMove = function(playerTurn,id) {
 
         }
 
+    };
+
         xmlHttpRequest.withCredentials = true;
 
         xmlHttpRequest.setRequestHeader("content-type","application/json;charset=UTF-8");
 
 
-    var makeMove = {"playerNumber":playerTurn, "chosenSquare":id};
+    var sendMove = {playerNumber:playerTurn, chosenSquare:id};
 
-    xmlHttpRequest.send(JSON.stringify(makeMove));
+    xmlHttpRequest.send(JSON.stringify(sendMove));
 
-    };
+
 };
