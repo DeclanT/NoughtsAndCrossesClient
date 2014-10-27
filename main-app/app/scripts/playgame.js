@@ -26,17 +26,15 @@ var makeChoice = function(id){
 
     if (playerTurn === 1){
         showNought();
-        makeMove(playerTurn, userChoice)
+       makeMove(playerTurn, userChoice);
         playerTurn =2;
     }
 
     else {
         showCross();
-        makeMove(playerTurn, userChoice)
+      makeMove(playerTurn, userChoice);
         playerTurn=1;
     }
-
-
 
 };
 
@@ -85,7 +83,8 @@ var newGame= function(){
         }
 
 
-        submit(player1Type,player2Type)
+        submit(player1Type,player2Type);
+
         playerTurn =1;
     }
 
@@ -138,10 +137,6 @@ var makeMove = function(playerTurn,id) {
     xmlHttpRequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/makemove", true);
 
 
-    xmlHttpRequest.withCredentials = true;
-    xmlHttpRequest.setRequestHeader("content-type","application/json;charset=UTF-8");
-
-
     xmlHttpRequest.onreadystatechange= function () {
         var response = xmlHttpRequest.responseText ;
 
@@ -169,15 +164,15 @@ var makeMove = function(playerTurn,id) {
         else {
 
         }
-    };
+
+        xmlHttpRequest.withCredentials = true;
+
+        xmlHttpRequest.setRequestHeader("content-type","application/json;charset=UTF-8");
+
 
     var makeMove = {"playerNumber":playerTurn, "chosenSquare":id};
 
     xmlHttpRequest.send(JSON.stringify(makeMove));
 
-
+    };
 };
-
-
-
-}
