@@ -95,31 +95,7 @@ var submit = function(player1Type,player2Type) {
     var xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/newgame", true);
 
-    xmlHttpRequest.onreadystatechange= function () {
-        var response = xmlHttpRequest.responseText.toLowerCase() ;
-
-        if (xmlHttpRequest.readyState === 4) {
-
-            if (xmlHttpRequest.status === 200) {
-
-                if (response.indexOf("win")>-1){
-
-                    if (response.substring(51,52)==="1"){
-                        alert("Player One has won!")
-                    }
-
-                    else if (response.substring(51,52) === "2"){
-                        alert("Player Two has won!")
-                    }
-                }
-
-                else if (response.indexOf("draw")>-1){
-                    alert("Game was a draw")
-                }
-            }
-
-        }
-    };
+    statechange(xmlHttpRequest);
 
     xmlHttpRequest.withCredentials = true;
 
@@ -136,6 +112,23 @@ var makeMove = function(playerTurn,id) {
     var xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/makemove", true);
 
+
+    statechange(xmlHttpRequest);
+
+
+        xmlHttpRequest.withCredentials = true;
+
+        xmlHttpRequest.setRequestHeader("content-type","application/json;charset=UTF-8");
+
+
+    var sendMove = {playerNumber:playerTurn, chosenSquare:id};
+
+    xmlHttpRequest.send(JSON.stringify(sendMove));
+
+
+};
+
+var statechange = function(xmlHttpRequest){
 
     xmlHttpRequest.onreadystatechange= function () {
         var response = xmlHttpRequest.responseText.toLowerCase() ;
@@ -166,15 +159,4 @@ var makeMove = function(playerTurn,id) {
         }
 
     };
-
-        xmlHttpRequest.withCredentials = true;
-
-        xmlHttpRequest.setRequestHeader("content-type","application/json;charset=UTF-8");
-
-
-    var sendMove = {playerNumber:playerTurn, chosenSquare:id};
-
-    xmlHttpRequest.send(JSON.stringify(sendMove));
-
-
 };
