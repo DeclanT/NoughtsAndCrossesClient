@@ -96,13 +96,13 @@ var submit = function(player1Type,player2Type) {
     xmlHttpRequest.open("POST","http://tictactoe.cloudapp.net:35000/api/v1.0/newgame", true);
 
     xmlHttpRequest.onreadystatechange= function () {
-        var response = xmlHttpRequest.responseText ;
+        var response = xmlHttpRequest.responseText.toLowerCase() ;
 
         if (xmlHttpRequest.readyState === 4) {
 
             if (xmlHttpRequest.status === 200) {
 
-                if (response.substring(12,15) === "Win"){
+                if (response.indexOf("win")>-1){
 
                     if (response.substring(51,52)==="1"){
                         alert("Player One has won!")
@@ -113,7 +113,7 @@ var submit = function(player1Type,player2Type) {
                     }
                 }
 
-                else if (response.substring(12,16) === "Draw"){
+                else if (response.indexOf("draw")>-1){
                     alert("Game was a draw")
                 }
             }
@@ -138,13 +138,13 @@ var makeMove = function(playerTurn,id) {
 
 
     xmlHttpRequest.onreadystatechange= function () {
-        var response = xmlHttpRequest.responseText ;
+        var response = xmlHttpRequest.responseText.toLowerCase() ;
 
         if (xmlHttpRequest.readyState === 4) {
 
             if (xmlHttpRequest.status === 200) {
 
-                if (response.substring(12,15) === "Win"){
+                if (response.indexOf("win")>-1){
 
                     if (response.substring(51,52)==="1"){
                         alert("Player One has won!")
@@ -155,7 +155,7 @@ var makeMove = function(playerTurn,id) {
                     }
                 }
 
-                else if (response.substring(12,16) === "Draw"){
+                else if (response.indexOf("draw")>-1){
                     alert("Game was a draw")
                 }
             }
