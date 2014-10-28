@@ -1,21 +1,19 @@
 
 module.exports =  {
 
-
-
-
-
             script: {
-
-                src: "main-app/app/scripts/*.js", dest: ".build/", expand: true, cwd: ""
-
-
+                cwd: "",
+                src: "main-app/app/scripts/*.js",
+                dest: ".build/",
+                expand: true,
             },
+
             images: {
-
-                src: "main-app/app/images/*", dest: ".build/", expand:true, cwd: ""
+                cwd: "",
+                src: "main-app/app/images/*",
+                dest: ".build/",
+                expand:true,
             }
-
     };
 
 

@@ -2,9 +2,6 @@ var copyTask = require("./.grunt/copytask");
 var cleanTask = require("./.grunt/cleantask");
 var jshintTask = require("./.grunt/jshinttask");
 
-
-
-
 module.exports = function(grunt) {
 
     // Project configuration.
