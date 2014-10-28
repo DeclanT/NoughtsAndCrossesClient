@@ -1,5 +1,6 @@
 var copyTask = require("./.grunt/copytask");
-var cleanTask = require("./.grunt/cleantask")
+var cleanTask = require("./.grunt/cleantask");
+var jshintTask = require("./.grunt/jshinttask");
 
 
 
@@ -11,6 +12,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         copy: copyTask,
         clean: cleanTask,
+        jshint: jshintTask,
 
     });
 
@@ -24,6 +26,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-    grunt.registerTask('default',["clean","copy"]);
+    grunt.registerTask('default',["clean","copy","jshint"]);
 
 };

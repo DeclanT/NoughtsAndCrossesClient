@@ -60,11 +60,11 @@ var newGame= function(){
         }
 
         else if (document.getElementById("player1Random").checked){
-            player1Type= document.getElementById("player1Random").value
+            player1Type= document.getElementById("player1Random").value;
         }
 
         else if (document.getElementById("player1PreTrained").checked){
-            player1Type= document.getElementById("player1PreTrained").value
+            player1Type= document.getElementById("player1PreTrained").value;
         }
 
 
@@ -75,11 +75,11 @@ var newGame= function(){
         }
 
         else if (document.getElementById("player2Random").checked){
-            player2Type= document.getElementById("player2Random").value
+            player2Type= document.getElementById("player2Random").value;
         }
 
         else if (document.getElementById("player2PreTrained").checked){
-            player2Type= document.getElementById("player2PreTrained").value
+            player2Type= document.getElementById("player2PreTrained").value;
         }
 
 
@@ -140,16 +140,16 @@ var statechange = function(xmlHttpRequest){
                 if (response.indexOf("win")>-1){
 
                     if (response.substring(51,52)==="1"){
-                        alert("Player One has won!")
+                        alert("Player One has won!");
                     }
 
                     else if (response.substring(51,52) === "2"){
-                        alert("Player Two has won!")
+                        alert("Player Two has won!");
                     }
                 }
 
                 else if (response.indexOf("draw")>-1){
-                    alert("Game was a draw")
+                    alert("Game was a draw");
                 }
             }
         }
