@@ -1,7 +1,7 @@
 var copyTask = require("./.grunt/copytask");
 var cleanTask = require("./.grunt/cleantask");
-
-var fileWatch = require("./.grunt/filewatcher");
+var jshintTask = require("./.grunt/jshinttask");
+var fileWatchTask = require("./.grunt/filewatcher");
 
 
 module.exports = function(grunt) {
@@ -11,8 +11,8 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         copy: copyTask,
         clean: cleanTask,
-
-        watch: fileWatch,
+        jshint: jshintTask,
+        watch: fileWatchTask,
 
     });
 
@@ -25,7 +25,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('nostart',["clean","copy"]);
+    grunt.registerTask('nostart',["jshint","clean","copy"]);
     grunt.registerTask('default',["nostart","watch"]);
-
 };
