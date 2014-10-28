@@ -1,10 +1,6 @@
 
 module.exports =  {
 
-
-
-
-
     scripts: {
         files:"main-app/app/scripts/*.js",
         tasks:["jshint","clean","copy"],
