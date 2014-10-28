@@ -7,7 +7,7 @@ module.exports =  {
 
             script: {
 
-                src: "main-app/app/scripts/*", dest: ".build/", expand: true, cwd: ""
+                src: "main-app/app/scripts/*.js", dest: ".build/", expand: true, cwd: ""
 
 
             },
