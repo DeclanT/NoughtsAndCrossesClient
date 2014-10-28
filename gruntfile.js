@@ -1,8 +1,17 @@
+var copyTask = require("./.grunt/copytask");
+var cleanTask = require("./.grunt/cleantask")
+
+
+
+
 module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        copy: copyTask,
+        clean: cleanTask,
+
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -15,5 +24,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-    grunt.registerTask('default',[]);
+    grunt.registerTask('default',["copy"]);
+    grunt.registerTask('clean',["clean"]);
 };
