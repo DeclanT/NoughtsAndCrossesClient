@@ -97,3 +97,61 @@ button {
 .buttonStyle {
     margin-left: -3px;
 }
+
+td {
+    width:205px;
+    height:205px;
+    border-style:solid;
+    border-width:3px;
+    border-color:#700b0b;
+}
+
+td.left{
+    border-left-width:0;
+}
+
+td.top{
+    border-top-width:0;
+}
+
+td.bottom{
+    border-bottom-width:0;
+}
+
+td.right{
+    border-right-width:0;
+}
+table button {
+    background: transparent;
+    width:200px;
+    height:200px;
+    margin:0;
+    border: none !important;
+    padding:0;
+}
+
+#ResetButton {
+    height:75px;
+    width:130px;
+    background:#700b0b;
+    color:#ffffff;
+}
+.hidebutton {
+    display:none;
+}
+
+img{
+    display:none;
+    height:200px;
+    width:200px;
+    padding:0;
+    border:none !important;
+}
+
+.showimg {
+    display:table-cell;
+}
+
+li {
+    list-style-type:none;
+}
