@@ -1,7 +1,6 @@
 
 module.exports =  {
 
-
     script: {
         cwd: "",
         src: "main-app/app/scripts/*.js",

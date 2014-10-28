@@ -2,7 +2,7 @@ var copyTask = require("./.grunt/copytask");
 var cleanTask = require("./.grunt/cleantask");
 var jshintTask = require("./.grunt/jshinttask");
 var fileWatchTask = require("./.grunt/filewatcher");
-
+var includeReplaceTask = require("./.grunt/includeReplaceTask");
 
 module.exports = function(grunt) {
 
@@ -13,6 +13,7 @@ module.exports = function(grunt) {
         clean: cleanTask,
         jshint: jshintTask,
         watch: fileWatchTask,
+        includereplace: includeReplaceTask
 
     });
 
@@ -25,6 +26,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('nostart',["jshint","clean","copy"]);
+
+    grunt.registerTask('nostart',["jshint","clean","copy","includereplace" ]);
     grunt.registerTask('default',["nostart","watch"]);
 };
+

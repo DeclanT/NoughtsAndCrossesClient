@@ -12,8 +12,7 @@ module.exports =  {
         src: ".build/main-app/app/images/*",
         dest: ".build/",
         expand:true,
-    }
-
+    },
 };
 
 
