@@ -1,13 +1,17 @@
-/**
- * Created by andrew.welsh on 28/10/2014.
- */
 module.exports =  {
 
-    css: {
-        cwd: "",
-        src: "main-app/app/CSS/*",
-        dest: ".build/",
+    src: {
+        cwd: '',
+        src: 'main-app/app/Less/*',
+        dest: '.build/',
         expand: true,
-    }
+        ext: '.min.css'
+    },
 
+    options:{
+        compress: true,
+        csslint:{
+            'unique-headings':false,
+        }
+    }
 };
