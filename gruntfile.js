@@ -1,6 +1,6 @@
-var copyTask = require("./.grunt/copytask");
-var cleanTask = require("./.grunt/cleantask");
-var jshintTask = require("./.grunt/jshinttask");
+var copyTask = require('./.grunt/copytask');
+var cleanTask = require('./.grunt/cleantask');
+var jshintTask = require('./.grunt/jshinttask');
 
 module.exports = function(grunt) {
 
@@ -23,6 +23,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-    grunt.registerTask('default',["clean","copy","jshint"]);
+    grunt.registerTask('default',['clean','copy','jshint']);
 
 };
