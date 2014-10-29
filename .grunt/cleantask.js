@@ -1,18 +1,9 @@
 module.exports =  {
 
-    script: {
-        cwd: "",
-        src: ".build/main-app/app/scripts/*.js",
-        dest: ".build/",
-        expand: true,
-    },
-
-    images: {
-        cwd: "",
-        src: ".build/main-app/app/images/*",
-        dest: ".build/",
-        expand:true,
-    },
+    all: ['.build'],
+    scripts: ['.build/main-app/app/scripts'],
+    images: ['.build/main-app/app/images'],
+    css: ['.build/main-app/app/css'],
 };
 
 
