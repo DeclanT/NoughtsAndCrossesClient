@@ -13,6 +13,13 @@ module.exports =  {
         dest: ".build/",
         expand:true,
     },
+
+    css: {
+        cwd: "",
+        src: ".build/main-app/app/css/",
+        expand:true,
+    }
+
 };
 
 

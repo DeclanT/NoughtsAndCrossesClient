@@ -1,9 +1,9 @@
 module.exports =  {
 
     src: {
-        cwd: '',
-        src: 'main-app/app/Less/*',
-        dest: '.build/',
+        cwd: 'main-app/app/Less/',
+        src: '*.less',
+        dest: '.build/main-app/app/css',
         expand: true,
         ext: '.min.css'
     },
