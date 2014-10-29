@@ -1,7 +1,7 @@
 var copyTask = require("./.grunt/copytask");
 var cleanTask = require("./.grunt/cleantask");
 var jshintTask = require("./.grunt/jshinttask");
-var fileWatchTask = require("./.grunt/filewatcher");
+var fileWatchTask = require("./.grunt/filewatchertask");
 var includeReplaceTask = require("./.grunt/includereplacetask");
 var lessTask = require("./.grunt/lessTask");
 
