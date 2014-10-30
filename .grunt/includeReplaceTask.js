@@ -4,15 +4,15 @@
 
 module.exports = {
     html: {
-        src: "main-app/app/*.html",
-        dest: ".build/",
+        src: 'main-app/app/*.html',
+        dest: '.build/',
         expand:true,
-        cwd: ""
+        cwd: ''
     },
     css: {
-        src: "main-app/app/CSS/*.*",
-        dest: ".build/",
+        src: 'main-app/app/Less/*.*',
+        dest: '.build/',
         expand:true,
-        cwd: ""
+        cwd: ''
     }
 };

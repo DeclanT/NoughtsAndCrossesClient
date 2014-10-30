@@ -89,8 +89,8 @@ var newGame= function(){
 
 };
 
-var newgame = function(player1Type,player2Type) {
 
+var newgame = function(player1Type,player2Type) {
     var playerTypes = {player1:player1Type, player2:player2Type};
     var url=('http://tictactoe.cloudapp.net:35000/api/v1.0/newgame');
     serverPost(url,playerTypes);
@@ -117,6 +117,7 @@ var statechange = function(xmlHttpRequest){
         var response = xmlHttpRequest.responseText.toLowerCase() ;
         if (xmlHttpRequest.readyState === 4) {
             if (xmlHttpRequest.status === 200) {
+
                 if (response.indexOf('win')>-1){
                     if (response.substring(51,52)==='1'){
                         alert('Player One has won!');
