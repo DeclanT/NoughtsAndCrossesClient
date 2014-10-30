@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 
 
 
-    grunt.registerTask('nostart',['jshint','clean','copy','includereplace','less' ]);
+    grunt.registerTask('nostart',['jshint','clean:all','copy','includereplace','less' ]);
     grunt.registerTask('default',['nostart','watch']);
 };
 
