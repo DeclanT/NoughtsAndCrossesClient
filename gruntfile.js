@@ -5,7 +5,7 @@ var jshintTask = require('./.grunt/jshinttask');
 var fileWatchTask = require('./.grunt/filewatchertask');
 var includeReplaceTask = require('./.grunt/includereplacetask');
 var lessTask = require('./.grunt/lessTask');
-
+var expressTask = require('./server/server');
 
 
 module.exports = function(grunt) {
@@ -19,15 +19,12 @@ module.exports = function(grunt) {
         watch: fileWatchTask,
         includereplace: includeReplaceTask,
         less: lessTask,
+        express: expressTask,
 
     });
 
-    var port = 35002;
-    grunt.registerTask('server',function(){
-        require('./server/server.js')
-            .listen(port);
-        grunt.log.writeln('listening on port '+ port);
-    });
+
+
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-lesslint');
@@ -42,6 +39,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('nostart',['jshint','clean:all','copy','includereplace','less' ]);
     grunt.registerTask('default',['nostart','watch']);
+    grunt.registerTask('express',['express']);
 };
 
 
