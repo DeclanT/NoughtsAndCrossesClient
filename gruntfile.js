@@ -24,10 +24,10 @@ module.exports = function(grunt) {
     });
 
 
-
+    var port = 35002;
     grunt.registerTask('server', 'starts the express server', function(){
-        expressTask.listen(35002, function() {
-            console.log('Express server listening on 35002');
+        expressTask.listen(port, function() {
+            console.log('Express server listening on ' + port);
         });
     });
 
