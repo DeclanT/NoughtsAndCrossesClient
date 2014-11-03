@@ -22,6 +22,13 @@ module.exports = function(grunt) {
 
     });
 
+    var port = 35002;
+    grunt.registerTask('server',function(){
+        require('./server/server.js')
+            .listen(port);
+        grunt.log.writeln('listening on port '+ port);
+    });
+
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-lesslint');
     grunt.loadNpmTasks('grunt-contrib-less');
