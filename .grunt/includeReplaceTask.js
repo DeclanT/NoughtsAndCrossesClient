@@ -9,10 +9,4 @@ module.exports = {
         expand:true,
         cwd: ''
     },
-    css: {
-        src: 'main-app/app/Less/*.*',
-        dest: '.build/',
-        expand:true,
-        cwd: ''
-    }
 };
