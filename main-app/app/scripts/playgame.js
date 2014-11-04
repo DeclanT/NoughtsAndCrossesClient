@@ -113,20 +113,20 @@ var serverPost = function(url,sendData){
 
 var statechange = function(xmlHttpRequest){
 
-    xmlHttpRequest.onreadystatechange= function () {
-        var response = xmlHttpRequest.responseText.toLowerCase() ;
+    xmlHttpRequest.onreadystatechange = function () {
+        var response = JSON.parse(xmlHttpRequest.responseText);
         if (xmlHttpRequest.readyState === 4) {
             if (xmlHttpRequest.status === 200) {
 
-                if (response.indexOf('win')>-1){
-                    if (response.substring(51,52)==='1'){
+                if (response.outcome === 'Win'){
+                    if (response.winner===1){
                         alert('Player One has won!');
                     }
-                    else if (response.substring(51,52) === '2'){
+                    else if (response.winner===2){
                         alert('Player Two has won!');
                     }
                 }
-                else if (response.indexOf('draw')>-1){
+                else if (response.outcome === 'Draw'){
                     alert('Game was a draw');
                 }
             }
