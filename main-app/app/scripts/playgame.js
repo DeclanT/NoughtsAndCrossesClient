@@ -82,7 +82,7 @@ var newGame= function(){
             player2Type= document.getElementById('player2PreTrained').value;
         }
 
-        newgame(player1Type,player2Type);
+        makeNewGame(player1Type,player2Type);
 
         playerTurn =1;
     }
@@ -90,7 +90,7 @@ var newGame= function(){
 };
 
 
-var newgame = function(player1Type,player2Type) {
+var makeNewGame = function(player1Type,player2Type) {
     var playerTypes = {player1:player1Type, player2:player2Type};
     var url=('http://tictactoe.cloudapp.net:35000/api/v1.0/newgame');
     serverPost(url,playerTypes);
@@ -111,27 +111,45 @@ var serverPost = function(url,sendData){
     xmlHttpRequest.send(JSON.stringify(sendData));
 };
 
+var handleWin = function(winner){
+    if (winner==='1')
+    {
+        alert('Player One has won!');
+    }
+    else if (winner==='2')
+    {
+        alert('Player Two has won!');
+    }
+};
+
+var handleDraw = function (){
+    alert('Game was a draw');
+};
+
+var handSuccessfulResponse= function (response){
+    if (response.outcome === 'Win')
+    {
+        handleWin(response.winner);
+    }
+    else if (response.outcome === 'Draw')
+    {
+        handleDraw();
+    }
+};
+
 var statechange = function(xmlHttpRequest){
 
     xmlHttpRequest.onreadystatechange = function () {
-        var response = JSON.parse(xmlHttpRequest.responseText);
-        if (xmlHttpRequest.readyState === 4) {
-            if (xmlHttpRequest.status === 200) {
 
-                if (response.outcome === 'Win'){
-                    if (response.winner===1){
-                        alert('Player One has won!');
-                    }
-                    else if (response.winner===2){
-                        alert('Player Two has won!');
-                    }
-                }
-                else if (response.outcome === 'Draw'){
-                    alert('Game was a draw');
-                }
+
+        if (xmlHttpRequest.readyState === 4)
+        {
+            if (xmlHttpRequest.status === 200)
+            {
+                var response = JSON.parse(xmlHttpRequest.responseText);
+                handSuccessfulResponse(response);
             }
-        }
-        else {
         }
     };
 };
+
