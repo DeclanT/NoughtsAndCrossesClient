@@ -29,13 +29,11 @@ var makeChoice = function(id){
 
 
     if (playerTurn === 1){
-        showNought();
         makeMove(playerTurn, userChoice);
         playerTurn =2;
     }
 
     else {
-        showCross();
         makeMove(playerTurn, userChoice);
         playerTurn=1;
     }
