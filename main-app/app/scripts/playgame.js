@@ -11,18 +11,22 @@ playerTurn=1;
 var showNought = function(){
     var img =document.getElementById('nought'+userChoice);
     img.classList.add('showimg');
+    hideButton();
 };
 
 var showCross = function(){
     var img =document.getElementById('cross'+userChoice);
     img.classList.add('showimg');
+    hideButton();
 };
 
-
-var makeChoice = function(id){
-    userChoice=id;
+var hideButton = function(){
     var button =document.getElementById(userChoice);
     button.classList.add('hidebutton');
+};
+var makeChoice = function(id){
+    userChoice=id;
+
 
     if (playerTurn === 1){
         showNought();
@@ -126,14 +130,31 @@ var handleDraw = function (){
     alert('Game was a draw');
 };
 
+var updateGameBoard = function(gameboard){
+  for (var i = 0; i < 9; i++) {
+      var currentPosition = gameboard.substring(i,i+1);
+      userChoice = i;
+      if (currentPosition === '1'){
+          showNought();
+      }
+      else if(currentPosition==='2'){
+          showCross();
+      }
+  }
+};
 var handSuccessfulResponse= function (response){
     if (response.outcome === 'Win')
     {
+        updateGameBoard(response.gameboard);
         handleWin(response.winner);
     }
     else if (response.outcome === 'Draw')
     {
+        updateGameBoard(response.gameboard);
         handleDraw();
+    }
+    else {
+        updateGameBoard(response.gameboard);
     }
 };
 
