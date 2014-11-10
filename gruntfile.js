@@ -6,7 +6,7 @@ var fileWatchTask = require('./.grunt/filewatchertask');
 var includeReplaceTask = require('./.grunt/includereplacetask');
 var lessTask = require('./.grunt/lessTask');
 var expressTask = require('./server/server.js');
-
+var concatTask = require('./.grunt/concattask.js');
 
 module.exports = function(grunt) {
 
@@ -20,6 +20,7 @@ module.exports = function(grunt) {
         includereplace: includeReplaceTask,
         less: lessTask,
         server: expressTask,
+        concat: concattask,
 
     });
 
@@ -39,10 +40,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-include-replace');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
 
-
-    grunt.registerTask('nostart',['jshint','clean:all','copy','includereplace','less' ]);
+    grunt.registerTask('nostart',['jshint','clean:all','concat','copy','includereplace','less' ]);
     grunt.registerTask('default',['nostart','server', 'watch']);
 };
 

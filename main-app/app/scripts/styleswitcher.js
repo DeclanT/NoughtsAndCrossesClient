@@ -1,7 +1,3 @@
-/**
- * Created by adam.dixon on 23/10/2014.
- */
-
 function setActiveStyleSheet(title) {
 
     var i,a;
