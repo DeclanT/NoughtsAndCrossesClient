@@ -6,7 +6,7 @@ var fileWatchTask = require('./.grunt/filewatchertask');
 var includeReplaceTask = require('./.grunt/includereplacetask');
 var lessTask = require('./.grunt/lessTask');
 var expressTask = require('./server/server.js');
-var concatTask = require('./.grunt/concatTask.js');
+var concatTask = require('./.grunt/concattask.js');
 
 module.exports = function(grunt) {
 
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         includereplace: includeReplaceTask,
         less: lessTask,
         server: expressTask,
-        concat: concatTask,
+        concat: concattask,
 
     });
 
