@@ -1,7 +1,3 @@
-/**
- * Created by declan.taylor on 09/10/2014.
- * updated by David Robson 21/10/2014.
- */
 
 var userChoice;
 var playerTurn;

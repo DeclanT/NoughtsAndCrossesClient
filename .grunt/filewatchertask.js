@@ -3,7 +3,7 @@ module.exports =  {
 
     scripts: {
         files:'main-app/app/scripts/*.js',
-        tasks:['jshint','clean:scripts','copy:scripts'],
+        tasks:['jshint','clean:scripts','concat:scripts'],
         options:{
             spawn:false,
         },
