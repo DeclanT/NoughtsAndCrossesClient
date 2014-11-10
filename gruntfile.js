@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         includereplace: includeReplaceTask,
         less: lessTask,
         server: expressTask,
-        concat: concattask,
+        concat: concatTask,
 
     });
 
