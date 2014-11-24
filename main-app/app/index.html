@@ -3,22 +3,11 @@
 <head>
 
     <title>Noughts and Crosses</title>
-    <script src="scripts/built.js">  </script>
+    <script src="scripts/built.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style1.min.css" title="default">
     <link rel="alternate stylesheet" type="text/css" href="css/style2.min.css" title="Style2">
     <script src="/angular/angular.js"></script>
-    <script>
-        var app = angular.module('gameClient',[]);
 
-        app.controller('gameController',function($scope){
-           $scope.makeChoice = function(squareNumber){
-                playerTurn= playerTurn===1?2:1;
-               makeMove(playerTurn,squareNumber);
-            };
-
-        });
-
-    </script>
 </head>
 
 <body ng-controller="gameController" >
@@ -173,5 +162,7 @@
 
     </footer>
 </div>
+
+<script src="scripts/built.js"></script>
 </body>
 </html>
