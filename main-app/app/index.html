@@ -12,18 +12,8 @@
 
         app.controller('gameController',function($scope){
            $scope.makeChoice = function(squareNumber){
-
-                if (playerTurn === 1){
-                    makeMove(playerTurn, squareNumber);
-                    playerTurn =2;
-                }
-
-                else {
-                    makeMove(playerTurn,squareNumber);
-                    playerTurn=1;
-                }
-
-                alert(squareNumber);
+                playerTurn= playerTurn===1?2:1;
+               makeMove(playerTurn,squareNumber);
             };
 
         });
@@ -36,7 +26,6 @@
 <div id="contentContainer">
     <header>
         <h1>Noughts and Crosses</h1>
-
     </header>
     <main>
         <table id="GameBoard">

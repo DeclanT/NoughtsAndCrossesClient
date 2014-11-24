@@ -1,3 +1,13 @@
+var app = angular.module('gameClient',[]);
+
+app.controller('gameController',function($scope){
+    $scope.makeChoice = function(squareNumber){
+        playerTurn= playerTurn===1?2:1;
+        makeMove(playerTurn,squareNumber);
+    };
+
+});
+
 var getPlayerTypes = function(){
     var player1Type;
     var player2Type;
