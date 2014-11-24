@@ -11,20 +11,22 @@
         var app = angular.module('gameClient',[]);
 
         app.controller('gameController',function($scope){
-            $scope.makeChoice = function(id){
+           $scope.makeChoice = function(squareNumber){
 
                 if (playerTurn === 1){
-                    makeMove(playerTurn, id);
+                    makeMove(playerTurn, squareNumber);
                     playerTurn =2;
                 }
 
                 else {
-                    makeMove(playerTurn,id);
+                    makeMove(playerTurn,squareNumber);
                     playerTurn=1;
                 }
 
+                alert(squareNumber);
             };
-        })
+
+        });
 
     </script>
 </head>
@@ -32,30 +34,27 @@
 <body ng-controller="gameController" >
 
 <div id="contentContainer">
-    <input ng-model="title" type="text" placeholder="your name">
-
     <header>
         <h1>Noughts and Crosses</h1>
 
     </header>
-
     <main>
         <table id="GameBoard">
             <tbody>
 
             <tr>
 
-                <td id="0" class="left top" onclick="makeChoice(id)">
+                <td id="0" class="left top" ng-click="makeChoice(0)">
                     <img id="nought0" src="images/nought.jpeg">
                     <img id="cross0"  src="images/cross.jpeg">
                 </td>
 
-                <td id="1" class="top" onclick="makeChoice(id)">
+                <td id="1" class="top" ng-click="makeChoice(1)">
                     <img id="nought1" src="images/nought.jpeg">
                     <img id="cross1"  src="images/cross.jpeg">
                 </td>
 
-                <td id="2" class="right top" onclick="makeChoice(id)">
+                <td id="2" class="right top" ng-click="makeChoice(2)">
                     <img id="nought2" src="images/nought.jpeg">
                     <img id="cross2"  src="images/cross.jpeg">
                 </td>
@@ -64,17 +63,17 @@
 
             <tr>
 
-                <td id="3" class="left" onclick="makeChoice(id)">
+                <td id="3" class="left" ng-click="makeChoice(3)">
                     <img id="nought3" src="images/nought.jpeg">
                     <img id="cross3"  src="images/cross.jpeg">
                 </td>
 
-                <td id="4" onclick="makeChoice(id)">
+                <td id="4" ng-click="makeChoice(4)">
                     <img id="nought4" src="images/nought.jpeg">
                     <img id="cross4"  src="images/cross.jpeg">
                 </td>
 
-                <td id="5" class="right" onclick="makeChoice(id)">
+                <td id="5" class="right" ng-click="makeChoice(5)">
                     <img id="nought5" src="images/nought.jpeg">
                     <img id="cross5"  src="images/cross.jpeg">
                 </td>
@@ -83,17 +82,17 @@
 
             <tr>
 
-                <td id="6" class="left bottom" onclick="makeChoice(id)">
+                <td id="6" class="left bottom" ng-click="makeChoice(6)">
                     <img id="nought6" src="images/nought.jpeg">
                     <img id="cross6"  src="images/cross.jpeg">
                 </td>
 
-                <td id="7" class="bottom" onclick="makeChoice(id)">
+                <td id="7" class="bottom" ng-click="makeChoice(7)">
                     <img id="nought7" src="images/nought.jpeg">
                     <img id="cross7"  src="images/cross.jpeg">
                 </td>
 
-                <td id="8" class="bottom right" onclick="makeChoice(id)">
+                <td id="8" class="bottom right" ng-click="makeChoice(8)">
                     <img id="nought8" src="images/nought.jpeg">
                     <img id="cross8"  src="images/cross.jpeg">
                 </td>

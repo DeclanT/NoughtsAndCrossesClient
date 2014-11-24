@@ -1,19 +1,3 @@
-var makeChoice = function(id){
-    userChoice=id;
-
-
-    if (playerTurn === 1){
-        makeMove(playerTurn, userChoice);
-        playerTurn =2;
-    }
-
-    else {
-        makeMove(playerTurn, userChoice);
-        playerTurn=1;
-    }
-
-};
-
 var getPlayerTypes = function(){
     var player1Type;
     var player2Type;
