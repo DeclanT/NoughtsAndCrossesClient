@@ -33,5 +33,21 @@ module.exports =  {
         },
     },
 
+    html: {
+        files:'main-app/app/index.html',
+        tasks:['clean:html','copy:html'],
+        options:{
+            spawn:false,
+        },
+    },
+
+    angular:{
+        files:'angular/*',
+        tasks:['nostart'],
+        options:{
+            spawn:false,
+        },
+    },
+
 };
 

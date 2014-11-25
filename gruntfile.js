@@ -3,7 +3,6 @@ var copyTask = require('./.grunt/copytask');
 var cleanTask = require('./.grunt/cleantask');
 var jshintTask = require('./.grunt/jshinttask');
 var fileWatchTask = require('./.grunt/filewatchertask');
-var includeReplaceTask = require('./.grunt/includereplacetask');
 var lessTask = require('./.grunt/lessTask');
 var expressTask = require('./server/server.js');
 var concatTask = require('./.grunt/concattask.js');
@@ -17,7 +16,6 @@ module.exports = function(grunt) {
         clean: cleanTask,
         jshint: jshintTask,
         watch: fileWatchTask,
-        includereplace: includeReplaceTask,
         less: lessTask,
         server: expressTask,
         concat: concatTask,
@@ -37,13 +35,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-lesslint');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-include-replace');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
 
 
-    grunt.registerTask('nostart',['jshint','clean:all','concat','copy','includereplace','less' ]);
+    grunt.registerTask('nostart',['jshint','clean:all','concat','copy','less' ]);
     grunt.registerTask('default',['nostart','server', 'watch']);
 };
 
