@@ -22,9 +22,7 @@ module.exports =  {
         expand: true,
     },
     options: {
-
         quotmark: 'single',
-
     }
 
 };

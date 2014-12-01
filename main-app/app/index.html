@@ -3,14 +3,34 @@
 <head>
 
     <title>Noughts and Crosses</title>
-    <link rel="alternate stylesheet" type="text/css" href="css/main.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.min.css">
     <script src="/angular/angular.min.js"></script>
 
 </head>
 
 <body ng-controller="noughtsAndCrossesController" >
+{{gameModel}}
+<button ng-click="newGame()">newgame</button>
+<table>
+    <tr>
+        <td ng-click="makeMove(0)"></td>
+        <td ng-click="makeMove(1)"></td>
+        <td ng-click="makeMove(2)"></td>
+    </tr>
 
+    <tr>
+        <td ng-click="makeMove(3)"></td>
+        <td ng-click="makeMove(4)"></td>
+        <td ng-click="makeMove(5)"></td>
+    </tr>
 
+    <tr>
+        <td ng-click="makeMove(6)"></td>
+        <td ng-click="makeMove(7)"></td>
+        <td ng-click="makeMove(8)"></td>
+    </tr>
+
+</table>
 <script src="scripts/built.js"></script>
 </body>
 </html>
