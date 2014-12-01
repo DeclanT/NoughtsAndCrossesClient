@@ -10,4 +10,12 @@ noughtsAndCrossesApp.controller('noughtsAndCrossesController', function ($scope,
         gameModel.makeMove(squareNumber);
     };
 
+    $scope.changePlayer1Type = function(){
+        gameModel.changePlayer1Type();
+    };
+
+    $scope.changePlayer2Type = function(){
+        gameModel.changePlayer2Type();
+    };
+
 });

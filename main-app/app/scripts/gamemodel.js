@@ -1,12 +1,15 @@
-noughtsAndCrossesApp.factory('gameModel',function($http) {
+noughtsAndCrossesApp.service('gameModel',function($http) {
 
 
-    var model = function () {
-        outcome = 'Continue';
-        gameboard = '000000000';
-        winner = 0;
+    return {
+        outcome:'Continue',
+        gameboard :'000000000',
+        winner:0,
 
-        serverPost = {
+        player1:'human',
+        player2:'random',
+
+        serverPost : {
             method: 'POST',
             url: '',
             'withCredentials': 'true',
@@ -14,29 +17,57 @@ noughtsAndCrossesApp.factory('gameModel',function($http) {
                 'content-type': 'application/json'
             },
             data: '',
-        };
+        },
 
-        newGame = function () {
-            serverPost.url = 'http://tictactoe1.cloudapp.net:35000/api/v1.0/newgame';
-            serverPost.data = {'player1':'random', 'player2':'human'};
-            $http(serverPost).
-                success(function (data) {
-                    model.outcome = data.outcome;
-                    model.gameboard = data.gameboard;
-                    model.winner = data.winner;
-                });
-        };
+        changePlayer1Type: function(){
+            var me = this;
+            if (me.player1==='human'){
+                me.player1='random';
+            }
+            else if (me.player1==='random'){
+                me.player1='pre-trained';
+            }
+            else {
+                me.player1='human';
+            }
+        },
 
-        makeMove = function (squareNumber) {
-            serverPost.url = 'http://tictactoe1.cloudapp.net:35000/api/v1.0/makemove';
-            serverPost.data = {'playerNumber': 2, 'chosenSquare': squareNumber};
-            $http(serverPost).
+        changePlayer2Type: function(){
+            var me = this;
+            if (me.player2==='human'){
+                me.player2='random';
+            }
+            else if (me.player2==='random'){
+                me.player2='pre-trained';
+            }
+            else {
+                me.player2='human';
+            }
+        },
+
+        newGame: function () {
+            var me = this;
+            me.serverPost.url = 'http://tictactoe1.cloudapp.net:35000/api/v1.0/newgame';
+            me.serverPost.data = {'player1':me.player1, 'player2':me.player2};
+            $http(me.serverPost).
                 success(function (data) {
-                    model.outcome = data.outcome;
-                    model.gameboard = data.gameboard;
-                    model.winner = data.winner;
+                    me.outcome = data.outcome;
+                    me.gameboard = data.gameboard;
+                    me.winner = data.winner;
                 });
-        };
+        },
+
+        makeMove: function (squareNumber) {
+            var me = this;
+            me.serverPost.url = 'http://tictactoe1.cloudapp.net:35000/api/v1.0/makemove';
+            me.serverPost.data = {'playerNumber': 1, 'chosenSquare': squareNumber};
+            $http(me.serverPost).
+                success(function (data) {
+                    me.outcome = data.outcome;
+                    me.gameboard = data.gameboard;
+                    me.winner = data.winner;
+                });
+        }
     };
-    return model;
+
 });

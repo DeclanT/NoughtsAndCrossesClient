@@ -9,7 +9,8 @@
 </head>
 
 <body ng-controller="noughtsAndCrossesController" >
-{{gameModel}}
+<div>{{gameModel.outcome + ' ' + gameModel.winner}}</div>
+{{gameModel.gameboard}}
 <button ng-click="newGame()">newgame</button>
 <table>
     <tr>
@@ -31,6 +32,10 @@
     </tr>
 
 </table>
+
+<img ng-click="changePlayer1Type()" class={{gameModel.player1}} src="images/blank.png">
+<img ng-click="changePlayer2Type()" class={{gameModel.player2}} src="images/blank.png">
+
 <script src="scripts/built.js"></script>
 </body>
 </html>
