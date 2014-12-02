@@ -8,7 +8,7 @@ noughtsAndCrossesApp.service('gameModel',function($http) {
 
         player1:'human',
         player2:'random',
-
+        currentPlayer:1,
         serverPost : {
             method: 'POST',
             url: '',
@@ -54,18 +54,30 @@ noughtsAndCrossesApp.service('gameModel',function($http) {
                     me.outcome = data.outcome;
                     me.gameboard = data.gameboard;
                     me.winner = data.winner;
+                    me.changeCurrentPlayer();
                 });
+        },
+
+        changeCurrentPlayer:function(){
+            var me=this;
+            if(me.currentPlayer===1 && me.player2==='human'){
+                me.currentPlayer=2;
+            }
+            else if(me.currentPlayer===2 && me.player1==='human'){
+                me.currentPlayer=1;
+            }
         },
 
         makeMove: function (squareNumber) {
             var me = this;
             me.serverPost.url = 'http://tictactoe1.cloudapp.net:35000/api/v1.0/makemove';
-            me.serverPost.data = {'playerNumber': 1, 'chosenSquare': squareNumber};
+            me.serverPost.data = {'playerNumber': me.currentPlayer, 'chosenSquare': squareNumber};
             $http(me.serverPost).
                 success(function (data) {
                     me.outcome = data.outcome;
                     me.gameboard = data.gameboard;
                     me.winner = data.winner;
+                    me.changeCurrentPlayer();
                 });
         }
     };
