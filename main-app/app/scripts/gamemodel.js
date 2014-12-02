@@ -66,7 +66,6 @@ noughtsAndCrossesApp.service('gameModel',function($http) {
                     me.outcome = data.outcome;
                     me.gameboard = data.gameboard;
                     me.winner = data.winner;
-                    me.placemove0 = 'showplayer1';
                 });
         }
     };
