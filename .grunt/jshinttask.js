@@ -8,6 +8,13 @@ module.exports =  {
         expand: true,
     },
 
+    services: {
+        cwd:'',
+        src:'main-app/app/scripts/services/*.js',
+        dest:'.build/',
+        expand:true,
+    },
+
     file: {
         cwd: '',
         src: '.grunt/*.js',

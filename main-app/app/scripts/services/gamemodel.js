@@ -10,7 +10,6 @@ noughtsAndCrossesApp.service('gameModel',function() {
         player2:'random',
         currentPlayer:1,
 
-
         changePlayer1Type: function(){
             var me = this;
             if (me.player1==='human'){

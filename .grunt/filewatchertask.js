@@ -2,8 +2,16 @@
 module.exports =  {
 
     scripts: {
-        files:'main-app/app/scripts/**.js',
-        tasks:['jshint','clean:scripts','concat:app'],
+        files:['main-app/app/scripts/app.js','main-app/app/scripts/controllers.js'],
+        tasks:['jshint','clean:scripts','concat:scripts'],
+        options:{
+            spawn:false,
+        },
+    },
+
+    services: {
+        files:'main-app/app/scripts/services/*.js',
+        tasks:['jshint','clean:scripts','concat:scripts'],
         options:{
             spawn:false,
         },
