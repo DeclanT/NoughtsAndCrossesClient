@@ -10,14 +10,6 @@ noughtsAndCrossesApp.service('gameModel',function() {
         player2:'random',
         currentPlayer:1,
 
-        updateModel:function(data){
-            var me = this;
-            me.outcome = data.outcome;
-            me.gameboard = data.gameboard;
-            me.winner = data.winner;
-            me.changeCurrentPlayer();
-        },
-
     };
 
 });
