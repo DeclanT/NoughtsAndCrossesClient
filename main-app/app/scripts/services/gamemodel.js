@@ -47,6 +47,14 @@ noughtsAndCrossesApp.service('gameModel',function() {
             }
         },
 
+        updateModel:function(data){
+            var me = this;
+            me.outcome = data.outcome;
+            me.gameboard = data.gameboard;
+            me.winner = data.winner;
+            me.changeCurrentPlayer();
+        },
+
     };
 
 });
