@@ -1,13 +1,13 @@
-noughtsAndCrossesApp.controller('noughtsAndCrossesController', function ($scope,$http,gameModel) {
+noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,$http,gameModel,apiService) {
 
     $scope.gameModel = gameModel;
 
     $scope.newGame = function () {
-        gameModel.newGame();
+        apiService.newGame();
     };
 
     $scope.makeMove = function (squareNumber) {
-        gameModel.makeMove(squareNumber);
+        apiService.makeMove(squareNumber);
     };
 
     $scope.changePlayer1Type = function(){
