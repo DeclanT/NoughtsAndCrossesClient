@@ -2,42 +2,49 @@
 <html ng-app="noughtsAndCrossesApp">
 <head>
 
-    <title>Fallout-Nuka and Sasparilla</title>
+    <title>Bottlecap Grid Game</title>
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="css/main.min.css">
     <script src="/angular/angular.min.js"></script>
-
 </head>
 
 <body ng-controller="noughtsAndCrossesController" >
-<div>{{gameModel.outcome + ' ' + gameModel.winner}}</div>
-<button ng-click="newGame()">newgame</button>
+    <div class="contentContainer">
 
+        <header>
+            <h1>Bottlecap Grid Game</h1>
+        </header>
 
-<table>
-    <tr>
-        <td><img id="0" ng-click="makeMove(0)" class="gamesquare showplayer{{gameModel.gameboard[0]}}" src="images/blank.png"></td>
-        <td><img id="1" ng-click="makeMove(1)" class="gamesquare showplayer{{gameModel.gameboard[1]}}" src="images/blank.png"></td>
-        <td><img id="2" ng-click="makeMove(2)" class="gamesquare showplayer{{gameModel.gameboard[2]}}" src="images/blank.png"></td>
-    </tr>
+        <div class="main">
+            <table>
+                <tr>
+                    <td><img id="0" ng-click="makeMove(0)" class="gamesquare showplayer{{gameModel.gameboard[0]}}" src="images/blank.png"></td>
+                    <td><img id="1" ng-click="makeMove(1)" class="gamesquare showplayer{{gameModel.gameboard[1]}}" src="images/blank.png"></td>
+                    <td><img id="2" ng-click="makeMove(2)" class="gamesquare showplayer{{gameModel.gameboard[2]}}" src="images/blank.png"></td>
+                </tr>
 
-    <tr>
-        <td><img id="3" ng-click="makeMove(3)" class="gamesquare showplayer{{gameModel.gameboard[3]}}" src="images/blank.png"></td>
-        <td><img id="4" ng-click="makeMove(4)" class="gamesquare showplayer{{gameModel.gameboard[4]}}" src="images/blank.png"></td>
-        <td><img id="5" ng-click="makeMove(5)" class="gamesquare showplayer{{gameModel.gameboard[5]}}" src="images/blank.png"></td>
-    </tr>
+                <tr>
+                    <td><img id="3" ng-click="makeMove(3)" class="gamesquare showplayer{{gameModel.gameboard[3]}}" src="images/blank.png"></td>
+                    <td><img id="4" ng-click="makeMove(4)" class="gamesquare showplayer{{gameModel.gameboard[4]}}" src="images/blank.png"></td>
+                    <td><img id="5" ng-click="makeMove(5)" class="gamesquare showplayer{{gameModel.gameboard[5]}}" src="images/blank.png"></td>
+                </tr>
 
-    <tr>
-        <td><img id="6" ng-click="makeMove(6)" class="gamesquare showplayer{{gameModel.gameboard[6]}}" src="images/blank.png"></td>
-        <td><img id="7" ng-click="makeMove(7)" class="gamesquare showplayer{{gameModel.gameboard[7]}}" src="images/blank.png"></td>
-        <td><img id="8" ng-click="makeMove(8)" class="gamesquare showplayer{{gameModel.gameboard[8]}}" src="images/blank.png"></td>
-    </tr>
+                <tr>
+                    <td><img id="6" ng-click="makeMove(6)" class="gamesquare showplayer{{gameModel.gameboard[6]}}" src="images/blank.png"></td>
+                    <td><img id="7" ng-click="makeMove(7)" class="gamesquare showplayer{{gameModel.gameboard[7]}}" src="images/blank.png"></td>
+                    <td><img id="8" ng-click="makeMove(8)" class="gamesquare showplayer{{gameModel.gameboard[8]}}" src="images/blank.png"></td>
+                </tr>
 
-</table>
+            </table>
+        </div>
 
-<img ng-click="changePlayer1Type()" class={{gameModel.player1}} src="images/blank.png">
-<img ng-click="changePlayer2Type()" class={{gameModel.player2}} src="images/blank.png">
+        <aside>
+            <img ng-click="changePlayer1Type()" class={{gameModel.player1}} src="images/blank.png">
+            <img ng-click="changePlayer2Type()" class={{gameModel.player2}} src="images/blank.png">
+            <button ng-click="newGame()">newgame</button>
+        </aside>
 
+    </div>
 <script src="scripts/built.js"></script>
 </body>
 </html>
