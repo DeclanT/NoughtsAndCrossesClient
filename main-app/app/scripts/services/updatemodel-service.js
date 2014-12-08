@@ -1,13 +1,14 @@
-noughtsAndCrossesApp.service('updateModel',function(gameModel,playersService) {
+angular.module('noughtsAndCrossesApp')
+        .service('updateModel', ['gameModel', 'playersService', function (gameModel, playersService) {
 
-   var update = function (data) {
-        gameModel.outcome = data.outcome;
-        gameModel.gameboard = data.gameboard;
-        gameModel.winner = data.winner;
-        playersService.changeCurrentPlayer();
-    };
+            var update = function (data) {
+                gameModel.outcome = data.outcome;
+                gameModel.gameboard = data.gameboard;
+                gameModel.winner = data.winner;
+                playersService.changeCurrentPlayer();
+            };
 
-    this.updateCurrentModel =function(data){
-        update(data);
-    };
-});
+            this.updateCurrentModel = function (data) {
+                update(data);
+            };
+        }]);

@@ -1,4 +1,5 @@
-noughtsAndCrossesApp.service('handleOutcome',function(gameModel){
+angular.module('noughtsAndCrossesApp')
+    .service('handleOutcome',['gameModel',function(gameModel){
 
     this.handle= function(){
         if (gameModel.outcome === 'Win') {
@@ -16,4 +17,4 @@ noughtsAndCrossesApp.service('handleOutcome',function(gameModel){
     var handleDraw = function(){
         alert('game was a draw');
     };
-});
+}]);

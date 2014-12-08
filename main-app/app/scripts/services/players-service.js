@@ -1,4 +1,5 @@
-noughtsAndCrossesApp.service('playersService',function($http,gameModel) {
+angular.module('noughtsAndCrossesApp')
+    .service('playersService',['$http','gameModel',function($http,gameModel) {
 
 
     this.changePlayer1Type= function () {
@@ -34,4 +35,4 @@ noughtsAndCrossesApp.service('playersService',function($http,gameModel) {
             gameModel.currentPlayer = 1;
         }
     };
-});
+}]);

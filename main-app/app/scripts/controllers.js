@@ -1,4 +1,5 @@
-noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,$http,gameModel,apiService,playersService) {
+angular.module('noughtsAndCrossesApp')
+    .controller('noughtsAndCrossesController',['$scope','$http','gameModel','apiService','playersService',function ($scope,$http,gameModel,apiService,playersService) {
 
     $scope.gameModel = gameModel;
 
@@ -18,4 +19,4 @@ noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,$
         playersService.changePlayer2Type();
     };
 
-});
+}]);

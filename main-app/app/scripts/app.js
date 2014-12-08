@@ -1,1 +1,1 @@
-var noughtsAndCrossesApp = angular.module('noughtsAndCrossesApp',[]);
+angular.module('noughtsAndCrossesApp',[]);
