@@ -1,4 +1,6 @@
-angular.module('noughtsAndCrossesApp')
+(function() {
+    'use strict';
+    angular.module('noughtsAndCrossesApp')
         .service('updateModel', ['gameModel', 'playersService', function (gameModel, playersService) {
 
             var update = function (data) {
@@ -12,3 +14,4 @@ angular.module('noughtsAndCrossesApp')
                 update(data);
             };
         }]);
+})();
