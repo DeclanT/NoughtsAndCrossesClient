@@ -1,6 +1,5 @@
-noughtsAndCrossesApp.service('gameModel',function() {
-
-
+angular.module('noughtsAndCrossesApp')
+    .service('gameModel',function() {
     return {
         outcome:'Continue',
         gameboard :'000000000',

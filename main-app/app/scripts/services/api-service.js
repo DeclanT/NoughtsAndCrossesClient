@@ -1,4 +1,5 @@
-noughtsAndCrossesApp.service('apiService',function($http,gameModel,updateModel,handleOutcome) {
+angular.module('noughtsAndCrossesApp').
+    service('apiService',['$http','gameModel','updateModel','handleOutcome',function($http,gameModel,updateModel,handleOutcome) {
 
     this.makeMove = function (squareNumber) {
         var url ='http://tictactoe1.cloudapp.net:35000/api/v1.0/makemove';
@@ -30,4 +31,4 @@ noughtsAndCrossesApp.service('apiService',function($http,gameModel,updateModel,h
             });
 
         };
-});
+}]);
