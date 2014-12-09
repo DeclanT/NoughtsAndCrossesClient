@@ -18,7 +18,7 @@
 
                     }
                     else if (data.outcome === 'Draw') {
-                        handleDraw(data);
+                        handleDraw();
                     }
                 };
 
@@ -26,11 +26,17 @@
                     for (var i = 0; i < 9; i++) {
                         me.gameboard[i] = data.winner;
                     }
-                    alert('player' + data.winner + ' has won');
+                    var message = ('player' + data.winner + ' has won');
+                    displayMessage(message);
                 };
 
-                var handleDraw = function (data) {
-                    alert('game was a ' + data.outcome);
+                var handleDraw = function () {
+                    var message = 'the game was a draw!';
+                    displayMessage(message);
+                };
+
+                var displayMessage= function(message){
+                  alert(message);
                 };
 
                 this.changePlayer1Type = function () {
