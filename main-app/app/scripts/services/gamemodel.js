@@ -7,7 +7,7 @@
                 this.outcome='Continue';
                 this.gameboard='000000000';
                 this.winner= 0;
-                this.player1='random';
+                this.player1='human';
                 this.player2= 'random';
                 this.currentPlayer= 1;
 
@@ -77,7 +77,7 @@
                 };
         };
 
-            return Model;
+            return new Model();
 
     });
 })();

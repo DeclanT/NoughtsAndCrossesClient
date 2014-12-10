@@ -4,14 +4,14 @@
         service('apiService', ['$http','$q',  function ($http,$q) {
 
             this.makeMove = function (squareNumber,currentPlayer) {
-                return makeCall('http://tictactoe1.cloudapp.net:35000/api/v1.0/makemove', {
+                return makeCall('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/makemove', {
                     'playerNumber': currentPlayer,
                     'chosenSquare': squareNumber
                 });
             };
 
             this.newGame = function (player1,player2) {
-                return makeCall('http://tictactoe1.cloudapp.net:35000/api/v1.0/newgame', {
+                return makeCall('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/newgame', {
                     'player1':player1,
                     'player2':player2
                 });

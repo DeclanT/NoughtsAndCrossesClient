@@ -1,15 +1,15 @@
 (function() {
     'use strict';
     angular.module('noughtsAndCrossesApp')
-        .controller('noughtsAndCrossesController', ['$scope', '$http', 'gameModel', 'apiService', 'playersService', function ($scope, $http, GameModel, apiService, playersService) {
+        .controller('noughtsAndCrossesController', ['$scope', '$http', 'gameModel', 'apiService','updateModel', function ($scope, $http, gameModel, apiService,updateModel) {
 
-            $scope.gameModel = new GameModel();
+            $scope.gameModel = gameModel;
 
-            $scope.newGame = function () {
+            $scope.newGame = function() {
                 apiService.newGame($scope.gameModel.player1, $scope.gameModel.player2)
                     .then(
                     function(data){
-                        $scope.gameModel.handle(data);
+                        updateModel.updateCurrentModel(data);
                         $scope.gameModel.changeCurrentPlayer();
                     },
                     function(message){
@@ -22,7 +22,7 @@
                 apiService.makeMove(squareNumber, $scope.gameModel.currentPlayer)
                     .then(
                     function(data){
-                        $scope.gameModel.handle(data);
+                        updateModel.updateCurrentModel(data);
                         $scope.gameModel.changeCurrentPlayer();
                     },
                     function(message){
