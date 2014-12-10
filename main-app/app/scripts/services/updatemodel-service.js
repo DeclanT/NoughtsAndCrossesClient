@@ -7,7 +7,7 @@
                 gameModel.outcome = data.outcome;
                 gameModel.gameboard = data.gameboard;
                 gameModel.winner = data.winner;
-                playersService.changeCurrentPlayer();
+                gameModel.handle(data);
             };
 
             this.updateCurrentModel = function (data) {

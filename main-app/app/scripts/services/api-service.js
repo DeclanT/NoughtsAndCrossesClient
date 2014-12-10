@@ -1,39 +1,37 @@
 (function() {
     'use strict';
     angular.module('noughtsAndCrossesApp').
-        service('apiService', ['$http', 'gameModel', 'updateModel', 'handleOutcome', function ($http, gameModel, updateModel, handleOutcome) {
+        service('apiService', ['$http','$q',  function ($http,$q) {
 
-            this.makeMove = function (squareNumber) {
-                makeCall('http://tictactoe1.cloudapp.net:35000/api/v1.0/makemove', {
-                    'playerNumber': gameModel.currentPlayer,
+            this.makeMove = function (squareNumber,currentPlayer) {
+                return makeCall('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/makemove', {
+                    'playerNumber': currentPlayer,
                     'chosenSquare': squareNumber
                 });
             };
 
-            this.newGame = function () {
-                makeCall('http://tictactoe1.cloudapp.net:35000/api/v1.0/newgame', {
-                    'player1': gameModel.player1,
-                    'player2': gameModel.player2
+            this.newGame = function (player1,player2) {
+                return makeCall('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/newgame', {
+                    'player1':player1,
+                    'player2':player2
                 });
             };
 
             var makeCall = function (url, data) {
-                var serverPost = {
-                    method: 'POST',
-                    url: url,
-                    'withCredentials': 'true',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    data: data,
-                };
 
-                $http(serverPost).
-                    success(function (data) {
-                        updateModel.updateCurrentModel(data);
-                        handleOutcome.handle();
+                var deferred =$q.defer();
+
+                $http.post(url,data,{'withCredentials':'true'})
+
+                    .success(function (data) {
+                        deferred.resolve(data);
+                    })
+                    .error(function(data,status){
+                        var message = 'Something went wrong.' + ' Problem: ' + data + ' error status: ' + status;
+
+                        deferred.reject(message);
                     });
-
+                return deferred.promise;
             };
         }]);
 })();
