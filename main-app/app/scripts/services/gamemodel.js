@@ -39,6 +39,14 @@
                   alert(message);
                 };
 
+                this.updateModel = function (data) {
+                    var me = this;
+                    me.outcome = data.outcome;
+                    me.gameboard = data.gameboard;
+                    me.winner = data.winner;
+                    me.handle(data);
+                };
+
                 this.changePlayer1Type = function () {
                     var me = this;
                     if (me.player1 === 'human') {
