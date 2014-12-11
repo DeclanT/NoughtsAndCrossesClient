@@ -7,9 +7,21 @@
                 this.outcome='Continue';
                 this.gameboard='000000000';
                 this.winner= 0;
-                this.player1='human';
-                this.player2= 'random';
-                this.currentPlayer= 1;
+                this.player1='random';
+                this.player2= 'human';
+                this.currentPlayer=1;
+
+
+                this.newGame = function(){
+                    var me = this;
+                    if(me.player1==='human'){
+                        me.currentPlayer=1;
+                    }
+
+                    else if(me.player2==='human'){
+                        me.currentPlayer=2;
+                    }
+                };
 
                 this.handle = function (data) {
                     var me = this;
@@ -47,40 +59,36 @@
                     me.handle(data);
                 };
 
-                this.changePlayer1Type = function () {
-                    var me = this;
-                    if (me.player1 === 'human') {
-                        me.player1 = 'random';
+                var nextPlayerType = function (currentType){
+                    if(currentType=== 'random'){
+                        return 'human';
                     }
-                    else if (me.player1 === 'random') {
-                        me.player1 = 'pre-trained';
+                    if(currentType=== 'human'){
+                        return 'pre-trained';
                     }
-                    else {
-                        me.player1 = 'human';
-                    }
+                    return 'random';
                 };
 
-                this.changePlayer2Type = function () {
+                this.switchPlayer1 = function(){
                     var me = this;
-                    if (me.player2 === 'human') {
-                        me.player2 = 'random';
-                    }
-                    else if (me.player2 === 'random') {
-                        me.player2 = 'pre-trained';
-                    }
-                    else {
-                        me.player2 = 'human';
-                    }
+                    me.player1  = nextPlayerType(me.player1);
                 };
+                this.switchPlayer2 = function() {
+                    var me = this;
+                    me.player2 = nextPlayerType(me.player2);
+                };
+
 
                 this.changeCurrentPlayer = function () {
                     var me = this;
-                    if (me.currentPlayer === 1 && me.player2 === 'human') {
-                        me.currentPlayer = 2;
+                    if (me.player1 !== 'human') {
+                        return;
                     }
-                    else if (me.currentPlayer === 2 && me.player1 === 'human') {
-                        me.currentPlayer = 1;
+                    if (me.player2 !== 'human') {
+                        return;
                     }
+
+                    me.currentPlayer = me.currentPlayer===1?2:1;
 
                 };
         };
