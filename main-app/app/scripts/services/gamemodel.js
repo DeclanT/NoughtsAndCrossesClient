@@ -39,7 +39,15 @@
                   alert(message);
                 };
 
-                this.changePlayer1Type = function () {
+                this.updateModel = function (data) {
+                    var me = this;
+                    me.outcome = data.outcome;
+                    me.gameboard = data.gameboard;
+                    me.winner = data.winner;
+                    me.handle(data);
+                };
+
+                this.changePlayerType = function () {
                     var me = this;
                     if (me.player1 === 'human') {
                         me.player1 = 'random';
