@@ -47,7 +47,7 @@
                     me.handle(data);
                 };
 
-                this.changePlayerType = function () {
+                this.changePlayer1Type = function () {
                     var me = this;
                     if (me.player1 === 'human') {
                         me.player1 = 'random';

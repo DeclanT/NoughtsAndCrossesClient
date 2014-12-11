@@ -32,7 +32,7 @@
             };
 
             $scope.changePlayer1Type = function () {
-                $scope.gameModel.changePlayerType();
+                $scope.gameModel.changePlayer1Type();
             };
 
             $scope.changePlayer2Type = function () {
