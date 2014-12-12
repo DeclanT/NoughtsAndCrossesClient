@@ -16,6 +16,7 @@
                         alert(message);
                     }
                 );
+                $scope.gameModel.newGame();
             };
 
             $scope.makeMove = function (squareNumber) {
@@ -32,12 +33,13 @@
             };
 
             $scope.changePlayer1Type = function () {
-                $scope.gameModel.changePlayer1Type();
+                $scope.gameModel.switchPlayer1();
             };
 
             $scope.changePlayer2Type = function () {
-                $scope.gameModel.changePlayer2Type();
+                $scope.gameModel.switchPlayer2();
             };
+
 
         }]);
 })();
