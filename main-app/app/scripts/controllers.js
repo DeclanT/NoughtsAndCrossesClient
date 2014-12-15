@@ -10,7 +10,7 @@
                     .then(
                     function(data){
                         $scope.gameModel.updateModel(data);
-                        $scope.gameModel.changeCurrentPlayer();
+                        $scope.gameModel.newGame();
                     },
                     function(message){
                         alert(message);

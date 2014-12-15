@@ -7,8 +7,8 @@
                 this.outcome='Continue';
                 this.gameboard='000000000';
                 this.winner= 0;
-                this.player1='random';
-                this.player2= 'human';
+                this.player1='human';
+                this.player2= 'random';
                 this.currentPlayer=1;
 
 
@@ -84,7 +84,7 @@
                     if (me.player1 !== 'human') {
                         return;
                     }
-                    if (me.player2 !== 'human') {
+                    if (me.player2 !== 'human' ) {
                         return;
                     }
 
