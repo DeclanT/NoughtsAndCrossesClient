@@ -13,6 +13,13 @@ module.exports =  {
             expand:true,
         },
 
+        sounds:{
+            cwd: '',
+            src: 'main-app/app/sounds/*',
+            dest: '.build/',
+            expand:true,
+        },
+
         angular:{
             cwd:'',
             src:'angular/*',
