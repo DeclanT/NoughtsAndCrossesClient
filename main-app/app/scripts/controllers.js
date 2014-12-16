@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular.module('noughtsAndCrossesApp')
-        .controller('noughtsAndCrossesController', ['$scope', '$http', 'gameModel', 'apiService','audioService', function ($scope, $http, gameModel, apiService,audioService) {
+        .controller('noughtsAndCrossesController', ['$scope', 'gameModel', 'apiService', 'audioService', function ($scope, gameModel, apiService,audioService) {
 
             $scope.gameModel = gameModel;
 
