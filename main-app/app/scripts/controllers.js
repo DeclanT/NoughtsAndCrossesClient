@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular.module('noughtsAndCrossesApp')
-        .controller('noughtsAndCrossesController', ['$scope', '$http', 'gameModel', 'apiService', function ($scope, $http, gameModel, apiService) {
+        .controller('noughtsAndCrossesController', ['$scope', 'gameModel', 'apiService', 'audioService', function ($scope, gameModel, apiService,audioService) {
 
             $scope.gameModel = gameModel;
 
@@ -11,6 +11,9 @@
                     function(data){
                         $scope.gameModel.updateModel(data);
                         $scope.gameModel.newGame();
+                        if ($scope.gameModel.player1 !== 'human') {
+                            audioService.playclick();
+                        }
                     },
                     function(message){
                         alert(message);
@@ -25,6 +28,8 @@
                     function(data){
                         $scope.gameModel.updateModel(data);
                         $scope.gameModel.changeCurrentPlayer();
+
+                            audioService.playclick();
                     },
                     function(message){
                         alert(message);
