@@ -11,6 +11,9 @@
                     function(data){
                         $scope.gameModel.updateModel(data);
                         $scope.gameModel.newGame();
+                        if ($scope.gameModel.player1 !== 'human') {
+                            audioService.playclick();
+                        }
                     },
                     function(message){
                         alert(message);
@@ -25,7 +28,8 @@
                     function(data){
                         $scope.gameModel.updateModel(data);
                         $scope.gameModel.changeCurrentPlayer();
-                        audioService.playclick();
+
+                            audioService.playclick();
                     },
                     function(message){
                         alert(message);

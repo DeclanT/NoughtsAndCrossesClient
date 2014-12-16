@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular.module('noughtsAndCrossesApp')
-        .service('gameModel',function () {
+        .factory('gameModel',function () {
 
             var Model = function(){
                 this.outcome='Continue';
@@ -10,7 +10,10 @@
                 this.player1='human';
                 this.player2= 'random';
                 this.currentPlayer=1;
-
+                this.score={
+                  player1:0,
+                  player2:0
+                };
 
                 this.newGame = function(){
                     var me = this;
@@ -35,11 +38,16 @@
                 };
 
                 var handleWin = function (data,me) {
-                    for (var i = 0; i < 9; i++) {
-                        me.gameboard[i] = data.winner;
+
+                    if(me.winner ==='1'){
+                        me.score.player1 +=1;
+                        me.gameboard ='111111111';
                     }
-                    var message = ('player' + data.winner + ' has won');
-                    displayMessage(message);
+                    else {
+                        me.score.player2 +=1;
+                        me.gameboard = '222222222';
+                    }
+
                 };
 
                 var handleDraw = function () {
@@ -61,12 +69,12 @@
 
                 var nextPlayerType = function (currentType){
                     if(currentType=== 'random'){
-                        return 'human';
-                    }
-                    if(currentType=== 'human'){
                         return 'pre-trained';
                     }
-                    return 'random';
+                    if(currentType=== 'human'){
+                        return 'random';
+                    }
+                    return 'human';
                 };
 
                 this.switchPlayer1 = function(){
