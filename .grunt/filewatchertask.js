@@ -9,6 +9,13 @@ module.exports =  {
         },
     },
 
+    directives: {
+        files:'main-app/app/scripts/directives/*.js',
+        tasks:['jshint','clean:scripts','concat:scripts'],
+        options:{
+            spawn:false,
+        },},
+
     services: {
         files:'main-app/app/scripts/services/*.js',
         tasks:['jshint','clean:scripts','concat:scripts'],
