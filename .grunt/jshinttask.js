@@ -15,6 +15,13 @@ module.exports =  {
         expand:true,
     },
 
+    directives: {
+        cwd:'',
+        src:'main-app/app/scripts/directives/*.js',
+        dest:'.build/',
+        expand:true,
+    },
+
     file: {
         cwd: '',
         src: '.grunt/*.js',
