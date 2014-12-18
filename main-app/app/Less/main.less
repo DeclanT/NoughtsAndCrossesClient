@@ -5,74 +5,195 @@
 body{
   background-color: @grey;
 }
-.contentContainer {
-  width:900px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right:auto;
-  background-color: #ffffff;
+@media (min-device-width:601px) {
+  .contentContainer {
+    width: 900px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+  }
+
+;
+
+  header {
+    background-color: @grey;
+    margin-bottom: 0;
+    h1 {
+      font-size: 80px;
+      margin: 0;
+    }
+  ;
+  }
+
+;
+
+  .main {
+    width: 650px;
+    display: inline-block;
+  }
+
+  td {
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+  }
+
+;
+
+  aside {
+    width: 240px;
+    display: inline-block;
+    vertical-align: top;
+
+    img {
+      background: url(/images/playertypesprite.png);
+      background-size: 300px 100px;
+      height: 100px;
+      width: 100px;
+    }
+  ;
+  }
+
+;
+  img.gamesquare {
+    background: url(/images/nukasarsparillasprite.png);
+    background-size: 600px 200px;
+    background-position: 0 0;
+    height: 200px;
+    width: 200px;
+
+    &.showplayer1 {
+      background-position: -200px 0;
+    }
+  ;
+
+    &.showplayer2 {
+      background-position: -400px 0;
+    }
+  ;
+  }
+
+;
+
+
+  .human {
+    background-position: 0 0;
+  }
+
+;
+
+
+  .random {
+    background-position: -100px 0;
+  }
+
+;
+
+
+  .pre-trained {
+    background-position: -200px 0;
+  }
+
+;
 };
 
-header{
-  background-color: @grey;
-  margin-bottom:0;
-  h1{
-  font-size:80px;
-    margin:0;
-};
-};
+@media (max-device-width:600px) {
+  .contentContainer {
+    width: 485px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+  }
 
-.main{
-  width:650px;
-  display:inline-block;
-}
-td {
-  width:200px;
-  height:200px;
-  border-style:solid;
-};
+;
 
-aside{
-  width:240px;
-  display:inline-block;
-  vertical-align:top;
+  header {
+    background-color: @grey;
+    margin-bottom: 0;
+    h1 {
+      font-size: 80px;
+      margin: 0;
+    }
+  ;
+  }
 
+;
 
-img {
-  background: url(/images/playertypesprite.png);
-  background-size: 300px 100px;
-  height: 100px;
-  width: 100px;
-};
-};
-img.gamesquare{
-  background: url(/images/nukasarsparillasprite.png);
-  background-size: 600px 200px;
-  background-position: 0 0;
-  height: 200px;
-  width: 200px;
+  .main {
+    width: 470px;
+    display: inline-block;
+  }
 
-  &.showplayer1{
-  background-position: -200px 0;
-};
+  td {
+    width: 150px;
+    height: 150px;
+    border-style: solid;
+  }
 
-  &.showplayer2{
-    background-position: -400px 0;
-  };
-};
+;
 
+  aside {
 
-.human {
-      background-position: 0 0;
+    vertical-align: top;
+
+    img {
+      background: url(/images/playertypesprite.png);
+      background-size: 225px 75px;
+      height: 75px;
+      width: 75px;
+      display:inline-block;
     };
 
+    div.scoreboard {
+      display:none;
+    }
 
-.random {
-  background-position: -100px 0;
+  }
+
+;
+  img.gamesquare {
+    background: url(/images/nukasarsparillasprite.png);
+    background-size: 450px 150px;
+    background-position: 0 0;
+    height: 150px;
+    width: 150px;
+
+    &.showplayer1 {
+      background-position: -150px 0;
+    }
+  ;
+
+    &.showplayer2 {
+      background-position: -300px 0;
+    }
+  ;
+  }
+
+;
+
+
+  .human {
+    background-position: 0 0;
+  }
+
+;
+
+
+  .random {
+    background-position: -75px 0;
+  }
+
+;
+
+
+  .pre-trained {
+    background-position: -150px 0;
+  }
+
+;
 };
 
-
-.pre-trained {
-  background-position: -200px 0;
-};
