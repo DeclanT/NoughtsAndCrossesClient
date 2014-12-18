@@ -4,8 +4,9 @@
 
     <title>Bottlecap Grid Game</title>
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css"  media="(max-device-width:601px)" href="css/main.min.css">
-    <link rel="stylesheet" type="text/css"  media="(min-device-width:600px)" href="css/main.min.css">
+    <link rel="stylesheet" type="text/css"  media="(max-device-width:800px)" href="css/main.min.css">
+    <link rel="stylesheet" type="text/css"  media="(max-device-width:400px)" href="css/main.min.css">
+    <link rel="stylesheet" type="text/css"  href="css/main.min.css">
     <script src="/angular/angular.min.js"></script>
 </head>
 
@@ -42,16 +43,16 @@
         <aside>
 
             <div class="gamesetup">
-                <img ng-click="changePlayer1Type()" class={{gameModel.player1}} src="images/blank.png">
-                <img ng-click="changePlayer2Type()" class={{gameModel.player2}} src="images/blank.png">
+                <img ng-click="changePlayer1Type()" class="{{gameModel.player1}}" src="images/blank.png">
+                <img ng-click="changePlayer2Type()" class="{{gameModel.player2}}" src="images/blank.png">
                 <button ng-click="newGame()">newgame</button>
             </div>
 
 
             <div class="scoreboard">
                         <h2>Scoreboard</h2>
-                        <h3>Player1: {{gameModel.score.player1}}</h3>
-                        <h3>Player2: {{gameModel.score.player2}}</h3>
+                        <h3 class="player1">Player1: {{gameModel.score.player1}}</h3>
+                        <h3 class="player2">Player2: {{gameModel.score.player2}}</h3>
             </div>
 
         </aside>
