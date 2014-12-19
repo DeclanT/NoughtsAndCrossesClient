@@ -1,78 +1,320 @@
+@nuka: #ff0000;
+@sunset: #ff6412;
+@mobBackground: #9e9e9e;
+
+@playerSpriteSize:100px;
+@squareSize:200px;
+@contentWidth:900px;
+
+@tabMaxSize:800px;
+@tabPlayerSpriteSize:75px;
+@tabSquareSize:150px;
+@tabContentWidth:700px;
+
+@mobMaxSize:400px;
+@mobPlayerSpriteSize:50px;
+@mobSquareSize:75px;
+@mobContentWidth:300px;
+
+
+
+
+
+
 * {
-  font-family: Arial, Helvetica, sans-serif;
-};
-@grey:#9e9e9e;
-body{
-  background-color: @grey;
-}
-.contentContainer {
-  width:900px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right:auto;
-  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif
 };
 
-header{
-  background-color: @grey;
-  margin-bottom:0;
-  h1{
-  font-size:80px;
-    margin:0;
-};
-};
+  body{
+    background: url(/images/background.jpg);
+    background-size: cover ;
+  }
 
-.main{
-  width:650px;
-  display:inline-block;
-}
-td {
-  width:200px;
-  height:200px;
-  border-style:solid;
-};
-
-aside{
-  width:240px;
-  display:inline-block;
-  vertical-align:top;
-
-
-img {
-  background: url(/images/playertypesprite.png);
-  background-size: 300px 100px;
-  height: 100px;
-  width: 100px;
-};
-};
-img.gamesquare{
-  background: url(/images/nukasarsparillasprite.png);
-  background-size: 600px 200px;
-  background-position: 0 0;
-  height: 200px;
-  width: 200px;
-
-  &.showplayer1{
-  background-position: -200px 0;
-};
-
-  &.showplayer2{
-    background-position: -400px 0;
+  .contentContainer {
+    width: @contentWidth;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
   };
-};
 
-
-.human {
-      background-position: 0 0;
+  header {
+    margin-bottom: 0;
+    h1 {
+      color:@nuka;
+      font-size: 80px;
+      margin: 0;
     };
+  };
+
+  .main {
+    background-color: transparent;
+    width: 650px;
+    display: inline-block;
+  };
+  td {
+    width: @squareSize;
+    height: @squareSize;
+    border: solid 5px;
+
+  };
+  aside {
+    width: (5+@playerSpriteSize*2);
+    display: inline-block;
+    vertical-align: top;
+
+    div.scoreboard {
+      color:@nuka;
+      h3.player1{
+        color:@nuka;
+      }
+      h3.player2{
+        color:@sunset;
+      }
+    }
+  };
 
 
-.random {
-  background-position: -100px 0;
+  img.gamesquare {
+    background: url(/images/nukasarsparillasprite.png);
+    background-size: @squareSize*3 @squareSize;
+    background-position: 0 0;
+    height: @squareSize;
+    width: @squareSize;
+
+    &.showplayer1 {
+      background-position: @squareSize*-1 0;
+    }
+  ;
+
+    &.showplayer2 {
+      background-position: @squareSize*-2 0;
+    }
+  ;
+  }
+
+;
+div.gamesetup {
+  img {
+    background: url(/images/playertypesprite.png);
+    background-size: 3*@playerSpriteSize @playerSpriteSize;
+    height: @playerSpriteSize;
+    width: @playerSpriteSize;
+    display: inline-block;
+  }
+    .human {
+      background-position: 0 0;
+    }
+
+  ;
+
+    .random {
+      background-position: @playerSpriteSize*-1 0;
+    }
+
+  ;
+
+    .pre-trained {
+      background-position: -2*@playerSpriteSize 0;
+    }
+  ;
+  }
+;
+
+@media (max-device-width:@tabMaxSize) {
+  body{
+    background: url(/images/background.jpg);
+    background-size: cover;
+  }
+  .contentContainer {
+    width: @tabContentWidth;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+  }
+
+;
+
+  header {
+
+    margin-bottom: 0;
+    h1 {
+      font-size: 80px;
+      margin: 0;
+    }
+  ;
+  }
+
+;
+
+  .main {
+    width: 500px;
+    display: inline-block;
+
+  };
+
+  td {
+    width: @tabSquareSize;
+    height: @tabSquareSize;
+    border-style: solid;
+  };
+
+  aside {
+    width:500px;
+    div.scoreboard {
+      display:inline-block;
+    }
+  };
+  img.gamesquare {
+    background: url(/images/nukasarsparillasprite.png);
+    background-size: 3*@tabSquareSize @tabSquareSize;
+    background-position: 0 0;
+    height: @tabSquareSize;
+    width: @tabSquareSize;
+
+    &.showplayer1 {
+      background-position: @tabSquareSize*-1 0;
+    }
+  ;
+
+    &.showplayer2 {
+      background-position: @tabSquareSize*-2 0;
+    }
+  ;
+  }
+
+;
+  div.gamesetup {
+    display:inline-block;
+    img {
+      background: url(/images/playertypesprite.png);
+      background-size: 3*@tabPlayerSpriteSize @tabPlayerSpriteSize;
+      height: @tabPlayerSpriteSize;
+      width: @tabPlayerSpriteSize;
+      display: inline-block;
+    }
+    .human {
+      background-position: 0 0;
+    }
+
+  ;
+
+    .random {
+      background-position: @tabPlayerSpriteSize*-1 0;
+    }
+
+  ;
+
+    .pre-trained {
+      background-position: -2*@tabPlayerSpriteSize 0;
+    }
+  ;
+  }
+;
+
 };
 
 
-.pre-trained {
-  background-position: -200px 0;
+
+
+@media (max-device-width:@mobMaxSize) {
+  body{
+    background:@mobBackground;
+  };
+  .contentContainer {
+    width: @mobContentWidth;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+  }
+
+;
+
+  header {
+
+    margin-bottom: 0;
+    h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+  ;
+  }
+
+;
+
+  .main {
+    width: 200px;
+    display: inline-block;
+  }
+
+  td {
+    width: @mobSquareSize;
+    height: @mobSquareSize;
+    border-style: solid;
+  }
+
+;
+
+  aside {
+
+
+    div.scoreboard {
+      display:none;
+    }
+
+  }
+
+;
+  img.gamesquare {
+    background: url(/images/nukasarsparillasprite.png);
+    background-size: 3*@mobSquareSize @mobSquareSize;
+    background-position: 0 0;
+    height: @mobSquareSize;
+    width: @mobSquareSize;
+
+    &.showplayer1 {
+      background-position: @mobSquareSize*-1 0;
+    }
+  ;
+
+    &.showplayer2 {
+      background-position: @mobSquareSize*-2 0;
+    }
+  ;
+  }
+
+;
+  div.gamesetup {
+    img {
+      background: url(/images/playertypesprite.png);
+      background-size: 3*@mobPlayerSpriteSize @mobPlayerSpriteSize;
+      height: @mobPlayerSpriteSize;
+      width: @mobPlayerSpriteSize;
+      display: inline-block;
+    }
+    .human {
+      background-position: 0 0;
+    }
+
+  ;
+
+    .random {
+      background-position: @mobPlayerSpriteSize*-1 0;
+    }
+
+  ;
+
+    .pre-trained {
+      background-position: -2*@mobPlayerSpriteSize 0;
+    }
+  ;
+  }
+;
+
 };
+
