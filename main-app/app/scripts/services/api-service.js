@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('noughtsAndCrossesApp').
+    angular.module('tombola.noughtsAndCrosses.apiService').
         service('apiService', ['$http','$q',  function ($http,$q) {
 
             this.makeMove = function (squareNumber,currentPlayer) {

@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('noughtsAndCrossesApp').
+    angular.module('tombola.noughtsAndCrosses.audio').
         factory('audioService', ['$document', function ($document) {
 
            var AudioSprite = function() {
