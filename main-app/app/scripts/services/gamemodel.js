@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('tombola.noughtsAndCrosses.gameModel')
+    angular.module('noughtsAndCrossesApp')
         .factory('gameModel',function () {
 
             var Model = function(){
@@ -47,6 +47,7 @@
                         me.score.player2 +=1;
                         me.gameboard = '222222222';
                     }
+
                 };
 
                 var handleDraw = function () {
@@ -96,6 +97,7 @@
                     }
 
                     me.currentPlayer = me.currentPlayer===1?2:1;
+
                 };
         };
 

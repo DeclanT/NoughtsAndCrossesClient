@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('tombola.noughtsAndCrosses.directives')
+    angular.module('noughtsAndCrossesApp')
         .directive('myDirective', function () {
             return {
                 restrict: 'E',
