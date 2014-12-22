@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('noughtsAndCrossesApp')
+    angular.module('tombola.noughtsAndCrosses')
         .controller('noughtsAndCrossesController', ['$scope', 'gameModel', 'apiService', 'audioService', function ($scope, gameModel, apiService,audioService) {
 
             $scope.gameModel = gameModel;
