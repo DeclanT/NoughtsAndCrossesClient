@@ -1,9 +1,8 @@
 (function() {
   'use strict';
     angular.module('tombola.noughtsAndCrosses.gameModel')
-        .constant('gameConstants',function () {
+        .constant('gameConstants',{
 
-            return{
                 outcome:'continue',
                 gameboard:'000000000',
                 winner:0,
@@ -14,7 +13,6 @@
                     player1: 0,
                     player2: 0
                 }
-            };
+            });
 
-        });
 })();

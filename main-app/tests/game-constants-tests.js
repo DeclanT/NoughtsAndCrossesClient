@@ -5,7 +5,7 @@
 
         beforeEach(function(){
             var $injector = angular.injector(['tombola.noughtsAndCrosses.gameModel']);
-            constants = $injector.get('gameConstants')();
+            constants = $injector.get('gameConstants');
         });
 
         it('check outcome defaults to continue', function () {
