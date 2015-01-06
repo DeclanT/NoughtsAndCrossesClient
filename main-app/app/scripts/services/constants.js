@@ -1,5 +1,5 @@
-//(function() {
-//    'use strict';
+(function() {
+  'use strict';
     angular.module('tombola.noughtsAndCrosses.gameModel')
         .constant('gameConstants',function () {
 
@@ -17,4 +17,4 @@
             };
 
         });
-//})();
+})();
