@@ -43,7 +43,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-karma');
 
 
-    grunt.registerTask('nostart',['jshint','clean:all','concat','copy','less' ]);
+    grunt.registerTask('nostart',['jshint','karma','clean:all','concat','copy','less' ]);
     grunt.registerTask('default',['nostart','server', 'watch']);
 };
 
