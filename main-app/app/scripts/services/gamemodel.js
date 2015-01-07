@@ -1,15 +1,15 @@
 (function() {
     'use strict';
     angular.module('tombola.noughtsAndCrosses.gameModel')
-        .factory('gameModel',function () {
+        .factory('gameModel',['gameConstants',function (initialSetup) {
 
             var Model = function(){
-                this.outcome='Continue';
-                this.gameboard='000000000';
-                this.winner= 0;
-                this.player1='human';
-                this.player2= 'random';
-                this.currentPlayer=1;
+                this.outcome=initialSetup.outcome;
+                this.gameboard=initialSetup.gameboard;
+                this.winner= initialSetup.winner;
+                this.player1=initialSetup.player1;
+                this.player2=initialSetup.player2;
+                this.currentPlayer=initialSetup.currentPlayer;
                 this.score={
                   player1:0,
                   player2:0
@@ -101,6 +101,6 @@
 
             return new Model();
 
-    });
+    }]);
 })();
 

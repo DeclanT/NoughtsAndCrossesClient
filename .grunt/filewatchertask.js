@@ -3,7 +3,7 @@ module.exports =  {
 
     scripts: {
         files:['main-app/app/scripts/modules.js','main-app/app/scripts/controllers.js'],
-        tasks:['jshint','clean:scripts','concat:scripts'],
+        tasks:['jshint','karma','clean:scripts','concat:scripts',],
         options:{
             spawn:false,
         },
@@ -11,14 +11,14 @@ module.exports =  {
 
     directives: {
         files:'main-app/app/scripts/directives/*.js',
-        tasks:['jshint','clean:scripts','concat:scripts'],
+        tasks:['jshint','karma','clean:scripts','concat:scripts'],
         options:{
             spawn:false,
         },},
 
     services: {
         files:'main-app/app/scripts/services/*.js',
-        tasks:['jshint','clean:scripts','concat:scripts'],
+        tasks:['jshint','karma','clean:scripts','concat:scripts'],
         options:{
             spawn:false,
         },
