@@ -12,8 +12,7 @@ module.exports = {
                 './main-app/app/scripts/services/constants.js',
                 './main-app/app/scripts/services/gamemodel.js',
                 './main-app/app/scripts/directives/gamesquare.js',
-                './main-app/tests/game-constants-tests.js',
-                './main-app/tests/gamemodel-tests.js'
+                './main-app/tests/*.js'
 
             ]
         }

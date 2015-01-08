@@ -257,5 +257,19 @@
         });
     });
 
+    describe('testing the gamemodels updateModel(data) function', function () {
+
+        var gamemodel;
+
+
+        beforeEach(function () {
+            var $injector = angular.injector(['tombola.noughtsAndCrosses.gameModel']);
+            gamemodel = $injector.get('gameModel');
+        });
+
+        it('', function () {
+            expect(gamemodel.outcome).to.equal('continue');
+        });
+    });
 
 })();
