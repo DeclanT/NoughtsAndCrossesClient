@@ -6,8 +6,10 @@
 
 
         beforeEach(function(){
-            var $injector = angular.injector(['tombola.noughtsAndCrosses.gameModel']);
-            gamemodel = $injector.get('gameModel');
+            module('tombola.noughtsAndCrosses.gameModel');
+            inject(function($injector){
+                gamemodel = $injector.get('gameModel');
+            });
         });
 
         it('check the game models outcome is set to the default constant', function () {
