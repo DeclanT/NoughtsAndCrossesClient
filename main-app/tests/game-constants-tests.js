@@ -4,8 +4,10 @@
         var constants;
 
         beforeEach(function(){
-            var $injector = angular.injector(['tombola.noughtsAndCrosses.gameModel']);
-            constants = $injector.get('gameConstants');
+            module('tombola.noughtsAndCrosses.gameModel');
+            inject(function($injector){
+                constants = $injector.get('gameConstants');
+            });
         });
 
         it('check outcome defaults to continue', function () {
